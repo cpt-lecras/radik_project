@@ -6,4 +6,3 @@ Shedule programm for RGRTU
 
 Just use and get big KAIF
 
-Im here
