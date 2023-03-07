@@ -14,8 +14,39 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePage();
+
+}
+
+
+class _HomePage extends State<HomePage> {
+
+  int selectedIndex = 0;
+  static const TextStyle optionStyle = TextStyle(color: Colors.white);
+  static const List<Widget> widgetOptions = <Widget>[
+    Text(
+      'Search',
+      style: optionStyle,
+    ),
+    Text(
+      'Home',
+      style: optionStyle,
+    ),
+    Text(
+      'Map',
+      style: optionStyle,
+    ),
+  ];
+
+  void onItemTapped(int index) {
+    setState(() {
+      selectedIndex = index;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -24,35 +55,47 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('RGRTU-assistent'),
       ),
-      body: const Center(
-        child: Text('[место для расписания]', style: TextStyle(color: Colors.white),),
+      body: Center(
+        child: widgetOptions.elementAt(selectedIndex),
+        //child: Text('[место для расписания]', style: TextStyle(color: Colors.white),),
       ),
-      bottomNavigationBar: const Bottom(),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: selectedIndex,
+        onTap: onItemTapped,
+        unselectedItemColor: Colors.amberAccent,
+        selectedItemColor: Colors.black,
+        backgroundColor: Colors.amberAccent,
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.search, color: Colors.black),
+            label: 'Search',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home, color: Colors.black),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.map, color: Colors.black),
+            label: 'Map',
+          ),
+        ],
+      ),
     );
   }
 }
 
-class Bottom extends StatefulWidget {
+/*class Bottom extends StatefulWidget {
   const Bottom({super.key});
 
   @override
   State<Bottom> createState() => BottomNavigator();
+
 }
+
 
 class BottomNavigator extends State<Bottom> {
 
   int _selectedIndex = 0;
-  static const TextStyle optionStyle = TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  static const List<Widget> _widgetOptions = <Widget>[
-    Text(
-      'Index 0: Home',
-      style: optionStyle,
-    ),
-    Text(
-      'Index 1: Search',
-      style: optionStyle,
-    ),
-  ];
 
   void _onItemTapped(int index) {
     setState(() {
@@ -63,8 +106,6 @@ class BottomNavigator extends State<Bottom> {
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
-      //selectedIconTheme: const IconThemeData(color: Colors.black),
-      //unselectedIconTheme: const IconThemeData(color: Colors.black),
       currentIndex: _selectedIndex,
       onTap: _onItemTapped,
       unselectedItemColor: Colors.amberAccent,
@@ -83,6 +124,6 @@ class BottomNavigator extends State<Bottom> {
       ],
     );
   }
-}
+}*/
 
 
