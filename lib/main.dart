@@ -27,36 +27,60 @@ class HomePage extends StatelessWidget {
       body: const Center(
         child: Text('[место для расписания]', style: TextStyle(color: Colors.white),),
       ),
-      bottomNavigationBar: const BottomNavigator(),
+      bottomNavigationBar: const Bottom(),
     );
   }
 }
 
-
-
-class BottomNavigator extends StatelessWidget{
-  const BottomNavigator({super.key});
-
+class Bottom extends StatefulWidget {
+  const Bottom({super.key});
 
   @override
-  Widget build(BuildContext context){
-    return BottomNavigationBar(
-        //selectedIconTheme: const IconThemeData(color: Colors.black),
-        //unselectedIconTheme: const IconThemeData(color: Colors.black),
-        unselectedItemColor: Colors.amberAccent,
-        selectedItemColor: Colors.black,
-        backgroundColor: Colors.amberAccent,
-        items: const [
-      BottomNavigationBarItem(
-        icon: Icon(Icons.search, color: Colors.black),
-        label: 'Search' ,
+  State<Bottom> createState() => BottomNavigator();
+}
 
-      ),
-      BottomNavigationBarItem(
-        icon: Icon(Icons.home, color: Colors.black),
-        label: 'Home',
-      )
-    ],
+class BottomNavigator extends State<Bottom> {
+
+  int _selectedIndex = 0;
+  static const TextStyle optionStyle = TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
+  static const List<Widget> _widgetOptions = <Widget>[
+    Text(
+      'Index 0: Home',
+      style: optionStyle,
+    ),
+    Text(
+      'Index 1: Search',
+      style: optionStyle,
+    ),
+  ];
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return BottomNavigationBar(
+      //selectedIconTheme: const IconThemeData(color: Colors.black),
+      //unselectedIconTheme: const IconThemeData(color: Colors.black),
+      currentIndex: _selectedIndex,
+      onTap: _onItemTapped,
+      unselectedItemColor: Colors.amberAccent,
+      selectedItemColor: Colors.black,
+      backgroundColor: Colors.amberAccent,
+      items: const [
+        BottomNavigationBarItem(
+          icon: Icon(Icons.search, color: Colors.black),
+          label: 'Search',
+
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.home, color: Colors.black),
+          label: 'Home',
+        )
+      ],
     );
   }
 }
