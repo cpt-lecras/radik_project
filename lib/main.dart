@@ -32,26 +32,33 @@ class HomePage extends StatelessWidget {
   }
 }
 
+
+
 class BottomNavigator extends StatelessWidget{
   const BottomNavigator({super.key});
+
 
   @override
   Widget build(BuildContext context){
     return BottomNavigationBar(
-        selectedIconTheme: const IconThemeData(color: Colors.black),
-        unselectedIconTheme: const IconThemeData(color: Colors.black),
+        //selectedIconTheme: const IconThemeData(color: Colors.black),
+        //unselectedIconTheme: const IconThemeData(color: Colors.black),
+        unselectedItemColor: Colors.amberAccent,
+        selectedItemColor: Colors.black,
         backgroundColor: Colors.amberAccent,
-        items: const <BottomNavigationBarItem> [
+        items: const [
       BottomNavigationBarItem(
-        icon: Icon(Icons.home),
-        label: 'Home',
+        icon: Icon(Icons.search, color: Colors.black),
+        label: 'Search' ,
+
       ),
       BottomNavigationBarItem(
-        icon: Icon(Icons.search),
-        label: 'Search',
+        icon: Icon(Icons.home, color: Colors.black),
+        label: 'Home',
       )
     ],
     );
   }
 }
+
 
