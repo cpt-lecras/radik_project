@@ -84,46 +84,5 @@ class _HomePage extends State<HomePage> {
   }
 }
 
-/*class Bottom extends StatefulWidget {
-  const Bottom({super.key});
-
-  @override
-  State<Bottom> createState() => BottomNavigator();
-
-}
-
-
-class BottomNavigator extends State<Bottom> {
-
-  int _selectedIndex = 0;
-
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return BottomNavigationBar(
-      currentIndex: _selectedIndex,
-      onTap: _onItemTapped,
-      unselectedItemColor: Colors.amberAccent,
-      selectedItemColor: Colors.black,
-      backgroundColor: Colors.amberAccent,
-      items: const [
-        BottomNavigationBarItem(
-          icon: Icon(Icons.search, color: Colors.black),
-          label: 'Search',
-
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.home, color: Colors.black),
-          label: 'Home',
-        )
-      ],
-    );
-  }
-}*/
 
 
