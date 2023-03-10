@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+export 'map.dart';
+import 'map.dart';
 
 void main() => runApp(const MyApp());
 
@@ -36,10 +38,7 @@ class _HomePage extends State<HomePage> {
       'Home',
       style: optionStyle,
     ),
-    Text(
-      'Map',
-      style: optionStyle,
-    ),
+    Map(),
   ];
 
   void onItemTapped(int index) {
