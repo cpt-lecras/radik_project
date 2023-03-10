@@ -24,7 +24,6 @@ class _Schedule extends State<Schedule>{
         child: Text('schedule', style: TextStyle(color: Colors.white)),
       ),
     );
-
   }
-
 }
+
