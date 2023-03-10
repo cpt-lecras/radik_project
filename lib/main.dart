@@ -29,7 +29,6 @@ class HomePage extends StatefulWidget {
 class _HomePage extends State<HomePage> {
 
   int selectedIndex = 0;
-  static const TextStyle optionStyle = TextStyle(color: Colors.white);
   static const List<Widget> widgetOptions = <Widget>[
     News(),
     Schedule(),
@@ -59,15 +58,17 @@ class _HomePage extends State<HomePage> {
         onTap: onItemTapped,
         unselectedItemColor: Colors.amberAccent,
         selectedItemColor: Colors.black,
-        backgroundColor: Colors.amberAccent,
+
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.newspaper, color: Colors.black),
             label: 'News',
+            backgroundColor: Colors.amberAccent,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.schedule, color: Colors.black),
             label: 'Schedule',
+            backgroundColor: Colors.blue,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.map, color: Colors.black),
