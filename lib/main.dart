@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-export 'map.dart';
 import 'map.dart';
-
+import 'news.dart';
+import 'profile.dart';
+import 'schedule.dart';
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
@@ -30,15 +31,10 @@ class _HomePage extends State<HomePage> {
   int selectedIndex = 0;
   static const TextStyle optionStyle = TextStyle(color: Colors.white);
   static const List<Widget> widgetOptions = <Widget>[
-    Text(
-      'Search',
-      style: optionStyle,
-    ),
-    Text(
-      'Home',
-      style: optionStyle,
-    ),
+    News(),
+    Schedule(),
     Map(),
+    Account(),
   ];
 
   void onItemTapped(int index) {
@@ -66,16 +62,20 @@ class _HomePage extends State<HomePage> {
         backgroundColor: Colors.amberAccent,
         items: const [
           BottomNavigationBarItem(
-            icon: Icon(Icons.search, color: Colors.black),
-            label: 'Search',
+            icon: Icon(Icons.newspaper, color: Colors.black),
+            label: 'News',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.home, color: Colors.black),
-            label: 'Home',
+            icon: Icon(Icons.schedule, color: Colors.black),
+            label: 'Schedule',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.map, color: Colors.black),
             label: 'Map',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person, color: Colors.black),
+            label: 'Account',
           ),
         ],
       ),

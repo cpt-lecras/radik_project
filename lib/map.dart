@@ -10,13 +10,10 @@ class Map extends StatefulWidget{
 class _Map extends State<Map>{
   @override
   Widget build(BuildContext context){
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
+    return const Center(
           child: Text('map'),
-      ),
-    ),
-    );
+      );
+
   }
 
 }
