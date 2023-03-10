@@ -46,19 +46,14 @@ class _HomePage extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black38,
-      appBar: AppBar(
-        title: const Text('RGRTU-assistent'),
-      ),
       body: Center(
         child: widgetOptions.elementAt(selectedIndex),
-        //child: Text('[место для расписания]', style: TextStyle(color: Colors.white),),
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: selectedIndex,
         onTap: onItemTapped,
         unselectedItemColor: Colors.amberAccent,
         selectedItemColor: Colors.black,
-
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.newspaper, color: Colors.black),
@@ -66,7 +61,7 @@ class _HomePage extends State<HomePage> {
             backgroundColor: Colors.amberAccent,
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.schedule, color: Colors.black),
+            icon: Icon(Icons.today_outlined, color: Colors.black),
             label: 'Schedule',
             backgroundColor: Colors.amberAccent,
           ),

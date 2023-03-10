@@ -10,8 +10,19 @@ class News extends StatefulWidget{
 class _News extends State<News>{
   @override
   Widget build(BuildContext context){
-    return const Center(
-      child: Text('News'),
+    return Scaffold(
+      backgroundColor: Colors.black38,
+      appBar: AppBar(
+        leading: const IconButton(
+          icon: Icon(Icons.menu),
+          //tooltip: 'Navigation menu',
+          onPressed: null,
+        ),
+        title: const Text('Новости'),
+      ),
+      body: const Center(
+        child: Text('news', style: TextStyle(color: Colors.white)),
+      ),
     );
 
   }
