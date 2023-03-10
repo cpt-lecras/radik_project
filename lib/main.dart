@@ -36,6 +36,12 @@ class _HomePage extends State<HomePage> {
     Map(),
     Account(),
   ];
+  static const List<Text> TextOp = <Text>[
+    Text('Новости'),
+    Text('Расписание'),
+    Text('Карта'),
+    Text('Аккаунт')
+  ];
 
   void onItemTapped(int index) {
     setState(() {
@@ -46,6 +52,10 @@ class _HomePage extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      //appbar
+      appBar: AppBar(
+        title: TextOp.elementAt(selectedIndex),
+      ),
       backgroundColor: Colors.black38,
       body: Center(
         child: widgetOptions.elementAt(selectedIndex),
