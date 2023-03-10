@@ -28,7 +28,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePage extends State<HomePage> {
 
-  int selectedIndex = 0;
+  int selectedIndex = 1;
   static const List<Widget> widgetOptions = <Widget>[
     News(),
     Schedule(),
@@ -68,17 +68,20 @@ class _HomePage extends State<HomePage> {
           BottomNavigationBarItem(
             icon: Icon(Icons.schedule, color: Colors.black),
             label: 'Schedule',
-            backgroundColor: Colors.blue,
+            backgroundColor: Colors.amberAccent,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.map, color: Colors.black),
             label: 'Map',
+            backgroundColor: Colors.amberAccent,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person, color: Colors.black),
             label: 'Account',
+            backgroundColor: Colors.amberAccent,
           ),
         ],
+
       ),
     );
   }
