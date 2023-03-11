@@ -3,7 +3,7 @@ import 'package:google_nav_bar/google_nav_bar.dart';
 import 'map.dart';
 import 'news.dart';
 import 'profile.dart';
-import 'schedule.dart';
+import 'Shedule/schedule.dart';
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -32,6 +32,15 @@ class _HomePage extends State<HomePage> {
       selectedIndex = index;
     });
   }
+  static const List<Color> ThemeApp = <Color>[
+    Colors.black,
+    Colors.white,
+    Colors.amberAccent
+  ];
+
+  //background color
+  //app bar color + lable
+  //bottom bar color (container + background) + icon(Color)+ active color + обводка
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +49,7 @@ class _HomePage extends State<HomePage> {
         appBar: AppBar(
           title: TextOp.elementAt(selectedIndex),
         ),
-        backgroundColor: Colors.black38,
+        backgroundColor: ThemeApp[0],
         body: Center(
           child: widgetOptions.elementAt(selectedIndex),
         ),
@@ -50,8 +59,8 @@ class _HomePage extends State<HomePage> {
             padding: const EdgeInsets.symmetric(
                 horizontal: 15.0, vertical: 10.0),
             child: GNav(
-              backgroundColor: Colors.amberAccent,
               iconSize: 28.0,
+              backgroundColor: Colors.amberAccent,
               color: Colors.black,
               activeColor: Colors.amberAccent,
               tabBackgroundColor: Colors.black,
