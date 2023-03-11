@@ -19,17 +19,24 @@ class _Schedule extends State<Schedule>{
 
               Container(
                 height: 80,
+                color: Colors.black,
                 child: DatePicker(
                   DateTime.now(),
                   height: 70,
                   width: 60,
                   initialSelectedDate: DateTime.now(),
-                  selectionColor: Colors.blue,
-                  selectedTextColor: Colors.orange,
+                  selectionColor: Colors.amberAccent,
+                  selectedTextColor: Colors.black,
+                  dayTextStyle: TextStyle(
+                    color: Colors.amber,
+                  ),
+                  monthTextStyle: TextStyle(
+                    color: Colors.amber,
+                  ),
                   dateTextStyle: const TextStyle(
                     fontSize:20,
                     fontWeight: FontWeight.w600,
-                    color: Colors.deepPurple
+                    color: Colors.amber
                   ),
                 ),
               ),
