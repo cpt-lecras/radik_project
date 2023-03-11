@@ -10,7 +10,7 @@ class Map extends StatefulWidget{
 class _Map extends State<Map>{
   @override
   Widget build(BuildContext context){
-    return Center(
+    return const Center(
       child: Text(
         'Map',
         style: TextStyle(color: Colors.orangeAccent) ,

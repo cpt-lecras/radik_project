@@ -20,7 +20,7 @@ class _CalCircle extends State<CalCircle>{
           height: 130,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(15),
-            color:Colors.amberAccent,
+            color:Colors.amber,
 
           ),
 

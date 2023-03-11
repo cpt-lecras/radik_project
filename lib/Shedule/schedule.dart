@@ -27,10 +27,10 @@ class _Schedule extends State<Schedule>{
                   initialSelectedDate: DateTime.now(),
                   selectionColor: Colors.amberAccent,
                   selectedTextColor: Colors.black,
-                  dayTextStyle: TextStyle(
+                  dayTextStyle: const TextStyle(
                     color: Colors.amber,
                   ),
-                  monthTextStyle: TextStyle(
+                  monthTextStyle: const TextStyle(
                     color: Colors.amber,
                   ),
                   dateTextStyle: const TextStyle(
@@ -43,7 +43,7 @@ class _Schedule extends State<Schedule>{
           //shedule
           Expanded(
             child: ListView(
-            children: [
+            children: const [
               CalCircle(),
               CalCircle(),
               CalCircle(),

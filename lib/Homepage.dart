@@ -4,6 +4,7 @@ import 'map.dart';
 import 'news.dart';
 import 'profile.dart';
 import 'Shedule/schedule.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -13,7 +14,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePage extends State<HomePage> {
 
-  int selectedIndex = 1;
+  int selectedIndex = 0;
   static const List<Widget> widgetOptions = <Widget>[
     News(),
     Schedule(),
@@ -21,10 +22,10 @@ class _HomePage extends State<HomePage> {
     Account(),
   ];
   static const List<Text> TextOp = <Text>[
-    Text('Новости'),
-    Text('Расписание'),
-    Text('Карта'),
-    Text('Аккаунт')
+    Text('Новости', style: TextStyle(fontSize: 25)),
+    Text('Расписание', style: TextStyle(fontSize: 25)),
+    Text('Карта', style: TextStyle(fontSize: 25)),
+    Text('Аккаунт', style: TextStyle(fontSize: 25))
   ];
 
   void onItemTapped(int index) {
@@ -32,12 +33,6 @@ class _HomePage extends State<HomePage> {
       selectedIndex = index;
     });
   }
-  static const List<Color> ThemeApp = <Color>[
-    Colors.black,
-    Colors.white,
-    Colors.amberAccent
-  ];
-
   //background color
   //app bar color + lable
   //bottom bar color (container + background) + icon(Color)+ active color + обводка
@@ -49,7 +44,7 @@ class _HomePage extends State<HomePage> {
         appBar: AppBar(
           title: TextOp.elementAt(selectedIndex),
         ),
-        backgroundColor: ThemeApp[0],
+        backgroundColor: Colors.black26,
         body: Center(
           child: widgetOptions.elementAt(selectedIndex),
         ),

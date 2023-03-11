@@ -10,7 +10,7 @@ class Account extends StatefulWidget{
 class _Account extends State<Account>{
   @override
   Widget build(BuildContext context){
-    return Center(
+    return const Center(
       child: Text(
           'Account',
         style: TextStyle(color: Colors.orangeAccent) ,
