@@ -13,8 +13,6 @@ class _Schedule extends State<Schedule>{
   @override
   Widget build(BuildContext context){
     return
-
-
       Column(
         children: [
           //calendar
@@ -23,69 +21,28 @@ class _Schedule extends State<Schedule>{
                 height: 80,
                 child: DatePicker(
                   DateTime.now(),
-                  height: 80,
+                  height: 70,
                   width: 60,
                   initialSelectedDate: DateTime.now(),
-
-
                   selectionColor: Colors.blue,
                   selectedTextColor: Colors.orange,
-                  dateTextStyle: TextStyle(
+                  dateTextStyle: const TextStyle(
                     fontSize:20,
                     fontWeight: FontWeight.w600,
                     color: Colors.deepPurple
                   ),
                 ),
               ),
-
-
-
           //shedule
           Expanded(
             child: ListView(
             children: [
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  height: 130,
-                  color: Colors.orangeAccent,
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  height: 130,
-                  color: Colors.orangeAccent,
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  height: 130,
-                  color: Colors.orangeAccent,
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  height: 130,
-                  color: Colors.orangeAccent,
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  height: 130,
-                  color: Colors.orangeAccent,
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  height: 130,
-                  color: Colors.orangeAccent,
-                ),
-              ),
+              CalCircle(),
+              CalCircle(),
+              CalCircle(),
+              CalCircle(),
+              CalCircle(),
+              CalCircle(),
             ],
     ),
           ),

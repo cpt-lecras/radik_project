@@ -1,26 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:date_picker_timeline/date_picker_timeline.dart';
-
-class CalCircle extends StatelessWidget{
 
 
+class CalCircle extends StatefulWidget {
+  const CalCircle({super.key});
+
+  @override
+  State<CalCircle> createState() => _CalCircle();
+}
 
 
+class _CalCircle extends State<CalCircle>{
   @override
   Widget build(BuildContext context){
     return
       Padding(
         padding: const EdgeInsets.all(8.0),
         child: Container(
-          height: 50,
-          width: 50,
+          height: 130,
           decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            color: Colors.indigoAccent,
-          ),
-        ),
+            borderRadius: BorderRadius.circular(15),
+            color:Colors.amberAccent,
 
+          ),
+
+        ),
       );
   }
 }
