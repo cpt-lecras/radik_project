@@ -11,7 +11,10 @@ class _Account extends State<Account>{
   @override
   Widget build(BuildContext context){
     return Center(
-      child: Text('Account'),
+      child: Text(
+          'Account',
+        style: TextStyle(color: Colors.orangeAccent) ,
+      ),
     );
 
   }

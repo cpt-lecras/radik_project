@@ -11,7 +11,10 @@ class _News extends State<News>{
   @override
   Widget build(BuildContext context){
     return Center(
-      child: Text('News'),
+      child: Text(
+          'News',
+          style: TextStyle(color: Colors.orangeAccent) ,
+      ),
     );
 
   }

@@ -11,7 +11,10 @@ class _Map extends State<Map>{
   @override
   Widget build(BuildContext context){
     return Center(
-      child: Text('Map'),
+      child: Text(
+        'Map',
+        style: TextStyle(color: Colors.orangeAccent) ,
+      ),
     );
   }
 
