@@ -9,25 +9,25 @@ class CalCircle extends StatefulWidget {
   State<CalCircle> createState() => _CalCircle();
 }
 
-  List<Text> TimePar = <Text>[
-  Text('8:10\n9:45', style: TextStyle(fontSize: 15,color: Colors.black)),
-  Text('9:55\n11:30', style: TextStyle(fontSize: 15,color: Colors.black)),
-  Text('11:40\n13:15', style: TextStyle(fontSize: 15,color: Colors.black)),
-  Text('13:35\n15:10', style: TextStyle(fontSize: 15,color: Colors.black)),
-  Text('15:20\n16:55', style: TextStyle(fontSize: 15,color: Colors.black)),
-  Text('17:05\n18:40', style: TextStyle(fontSize: 15,color: Colors.black)),
-  Text('18:50\n20:15', style: TextStyle(fontSize: 15,color: Colors.black)),
+  const List<Text> TimePar = <Text>[
+  Text('8:10\n9:45', style: TextStyle(fontSize: 15,color: Colors.black),textAlign: TextAlign.center),
+  Text('9:55\n11:30', style: TextStyle(fontSize: 15,color: Colors.black),textAlign: TextAlign.center),
+  Text('11:40\n13:15', style: TextStyle(fontSize: 15,color: Colors.black),textAlign: TextAlign.center),
+  Text('13:35\n15:10', style: TextStyle(fontSize: 15,color: Colors.black),textAlign: TextAlign.center),
+  Text('15:20\n16:55', style: TextStyle(fontSize: 15,color: Colors.black),textAlign: TextAlign.center),
+  Text('17:05\n18:40', style: TextStyle(fontSize: 15,color: Colors.black),textAlign: TextAlign.center),
+  Text('18:50\n20:15', style: TextStyle(fontSize: 15,color: Colors.black),textAlign: TextAlign.center),
 ];
 
 
 class _CalCircle extends State<CalCircle>{
 
 
-  int TimeIn=0;
+  int selectedIndex=0;
 
-  void nexIn(index){
+  void nextItem(int index) {
     setState(() {
-      TimeIn = index;
+      selectedIndex = index;
     });
   }
 
@@ -51,25 +51,27 @@ class _CalCircle extends State<CalCircle>{
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
 
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 10.0,vertical: 10.0 ),
-                    child: Container(
 
-                      height: 100,
-                      width: 70,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(5),
-                        color:Colors.amber,
-                      ),
-                      child:
+                  Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 10.0, vertical: 10.0),
+                      child: Container(
+
+                        height: 100,
+                        width: 70,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(5),
+                          color: Colors.amber,
+                        ),
+                        child:
                         Center(
 
-                            child: TimePar.elementAt(TimeIn)
+                            child: TimePar[selectedIndex]
                         ),
 
 
+                      ),
                     ),
-                  ),
                   Container(
                     padding: EdgeInsets.symmetric(horizontal: 100,vertical: 15),
                     height: 100,
@@ -93,12 +95,13 @@ class _CalCircle extends State<CalCircle>{
                       width: 60,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(15),
-                        color:Colors.black,
+                        color:Colors.amber,
                       ),
                       child: Text(
                         'ЛК',
                         style: TextStyle(
                           fontSize: 20,
+                          color: Colors.black,
                         ),
                       ),
                     ),
