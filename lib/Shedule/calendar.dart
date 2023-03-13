@@ -22,17 +22,15 @@ class CalCircle extends StatefulWidget {
 
 class _CalCircle extends State<CalCircle>{
 
+  /*_CalCircle(int index){
+    int selectedIndex=index;
+  }*/
+  
+    Padding method(){
 
-  int selectedIndex=0;
+    int selectedIndex=0;
+    //_CalCircle(selectedIndex);
 
-  void nextItem(int index) {
-    setState(() {
-      selectedIndex = index;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context){
     return
       Padding(
         padding: const EdgeInsets.all(8.0),
@@ -41,77 +39,88 @@ class _CalCircle extends State<CalCircle>{
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(15),
             color:Colors.amber,
-            boxShadow: [
+            boxShadow: const [
               BoxShadow(color: Colors.amberAccent,offset: Offset(-1,1),blurRadius: 5,spreadRadius: 1)
             ],
           ),
-          
+
           child:
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
 
-                children: [
+            children: [
 
-                  Padding(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 10.0, vertical: 10.0),
-                      child: Container(
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                    horizontal: 10.0, vertical: 10.0),
+                child: Container(
 
-                        height: 100,
-                        width: 70,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(5),
-                          color: Colors.amber,
-                        ),
-                        child:
-                        Center(
-
-                            child: TimePar[selectedIndex]
-                        ),
-
-
-                      ),
-                    ),
-                  Container(
-                    padding: EdgeInsets.symmetric(horizontal: 100,vertical: 15),
-                    height: 100,
-                    width: 200,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
-                      color:Colors.black,
-                    ),
-                    child: Text(
-                      'ЛК',
-                      style: TextStyle(
-                        fontSize: 20,
-                      ),
-                    ),
+                  height: 100,
+                  width: 70,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(5),
+                    color: Colors.amber,
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Container(
-                      padding: EdgeInsets.symmetric(horizontal: 100,vertical: 15),
-                      height: 60,
-                      width: 60,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15),
-                        color:Colors.amber,
-                      ),
-                      child: Text(
-                        'ЛК',
-                        style: TextStyle(
-                          fontSize: 20,
-                          color: Colors.black,
-                        ),
-                      ),
-                    ),
+                  child:
+                  Center(
+
+                    child: TimePar.elementAt(selectedIndex),
                   ),
 
-                ],
+
+                ),
               ),
+              Container(
+                //padding: const EdgeInsets.symmetric(horizontal: 100,vertical: 15),
+                height: 100,
+                width: 200,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(15),
+                  color:Colors.amber,
+                ),
+                child: const Center(
+                  child: Text(
+                    'Мат. анализ',
+                    style: TextStyle(
+                      fontSize: 20,
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                    horizontal: 10.0, vertical: 10.0),
+                child: Container(
+                  height: 60,
+                  width: 60,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15),
+                    color:Colors.amber,
+                  ),
+
+                  child: const Center(
+                    child: Text(
+                        'ЛК',
+                        style: TextStyle(fontSize: 28,color: Colors.black)
+                    ),
+                  ),
+
+                ),
+              ),
+
+
+            ],
+          ),
 
 
         ),
       );
-  }
+
+    }
+
+    @override
+    Widget build(BuildContext context){
+      return
+        method();
+    }
 }

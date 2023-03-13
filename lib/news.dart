@@ -14,10 +14,12 @@ class _News extends State<News> {
       child: Scrollbar(
         thickness: 20.0,
         child: ListView.builder(
-          itemCount: 100,
+          itemCount: 50,
           itemBuilder: (context, index) {
-            return Container(
-              height: 300,
+            return Padding(
+            padding: const EdgeInsets.all(5.0),
+            child: Container(
+              height: 400,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
                   color: Colors.grey,
@@ -28,8 +30,9 @@ class _News extends State<News> {
               ),
               child: const Image(
                 image: NetworkImage(
-                    'https://top-fon.com/uploads/posts/2023-01/1674908321_top-fon-com-p-smi-fon-dlya-prezentatsii-183.jpg'),
+                    'https://voss-metall.ru/assets/images/novosti.jpg'),
               ),
+            ),
             );
           }
         ),
