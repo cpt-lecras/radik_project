@@ -10,6 +10,7 @@ class Schedule extends StatefulWidget{
 }
 
 class _Schedule extends State<Schedule>{
+
   @override
   Widget build(BuildContext context){
     return
@@ -41,18 +42,7 @@ class _Schedule extends State<Schedule>{
                 ),
               ),
           //shedule
-          Expanded(
-            child: ListView(
-            children: const [
-              CalCircle(),
-              CalCircle(),
-              CalCircle(),
-              CalCircle(),
-              CalCircle(),
-              CalCircle(),
-            ],
-    ),
-          ),
+            const CalCircle(),
         ],
       );
   }

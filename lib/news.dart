@@ -11,11 +11,10 @@ class _News extends State<News> {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: Scrollbar(
-        thickness: 20.0,
         child: ListView.builder(
-          itemCount: 50,
-          itemBuilder: (context, index) {
+          itemCount: 100,
+          itemBuilder: (BuildContext context, int index) {
+
             return Padding(
             padding: const EdgeInsets.all(5.0),
             child: Container(
@@ -34,9 +33,9 @@ class _News extends State<News> {
               ),
             ),
             );
+
           }
         ),
-      ),
     );
   }
 }
