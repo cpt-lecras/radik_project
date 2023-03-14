@@ -6,7 +6,7 @@ class News extends StatefulWidget {
   @override
   State<News> createState() => _News();
 }
-// gg wp its mine
+
 
 const List<Image> assetImages = <Image>[
   Image(image: AssetImage('assets/images/news.jpg')),
