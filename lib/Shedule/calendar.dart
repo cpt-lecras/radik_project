@@ -27,6 +27,8 @@ const List<Text> TimePar = <Text>[
 ];
 
 const List<Text> NamePar = <Text>[
+  Text('--', style: TextStyle(fontSize: 15, color: Colors.black),
+      textAlign: TextAlign.center),
   Text('СЦТ', style: TextStyle(fontSize: 15, color: Colors.black),
       textAlign: TextAlign.center),
   Text('ТРПП', style: TextStyle(fontSize: 15, color: Colors.black),
@@ -34,8 +36,6 @@ const List<Text> NamePar = <Text>[
   Text('ТЕР. ВЕР.', style: TextStyle(fontSize: 15, color: Colors.black),
       textAlign: TextAlign.center),
   Text('Физ-ра', style: TextStyle(fontSize: 15, color: Colors.black),
-      textAlign: TextAlign.center),
-  Text('--', style: TextStyle(fontSize: 15, color: Colors.black),
       textAlign: TextAlign.center),
   Text('--', style: TextStyle(fontSize: 15, color: Colors.black),
       textAlign: TextAlign.center),
@@ -52,7 +52,7 @@ const List<Text> TypePar = <Text>[
       textAlign: TextAlign.center),
   Text('ПР', style: TextStyle(fontSize: 15, color: Colors.black),
       textAlign: TextAlign.center),
-  Text('', style: TextStyle(fontSize: 15, color: Colors.black),
+  Text('ПР', style: TextStyle(fontSize: 15, color: Colors.black),
       textAlign: TextAlign.center),
   Text('', style: TextStyle(fontSize: 15, color: Colors.black),
       textAlign: TextAlign.center),
@@ -66,7 +66,7 @@ class _CalCircle extends State<CalCircle> {
   Widget build(BuildContext context) {
     return Expanded(
         child: ListView.builder(
-            itemCount: 6,
+            itemCount: 7,
             itemBuilder: (BuildContext context, int index){
               return Padding(
                 padding: const EdgeInsets.all(8.0),

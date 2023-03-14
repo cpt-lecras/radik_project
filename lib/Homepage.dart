@@ -59,8 +59,8 @@ class _HomePage extends State<HomePage> {
               color: Colors.black,
               activeColor: Colors.amberAccent,
               tabBackgroundColor: Colors.black,
-              padding: EdgeInsets.all(10),
-              gap: 12,
+              padding: const EdgeInsets.all(10),
+              gap: 10,
               onTabChange: (selectedIndex) {
                 onItemTapped(selectedIndex);
               },
