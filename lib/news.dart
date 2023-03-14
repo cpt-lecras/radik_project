@@ -7,14 +7,26 @@ class News extends StatefulWidget {
   State<News> createState() => _News();
 }
 
+
+const List<Image> assetImages = <Image>[
+  Image(image: AssetImage('assets/images/news.jpg')),
+  Image(image: AssetImage('assets/images/news1.jpg')),
+  Image(image: AssetImage('assets/images/news2.jpg')),
+  Image(image: AssetImage('assets/images/news3.jpg')),
+  Image(image: AssetImage('assets/images/news4.jpg')),
+  Image(image: AssetImage('assets/images/news5.jpg')),
+  Image(image: AssetImage('assets/images/news6.jpg')),
+  Image(image: AssetImage('assets/images/news7.jpg')),
+];
+
 class _News extends State<News> {
   @override
   Widget build(BuildContext context) {
+
     return Expanded(
         child: ListView.builder(
-          itemCount: 100,
+          itemCount: 8,
           itemBuilder: (BuildContext context, int index) {
-
             return Padding(
             padding: const EdgeInsets.all(5.0),
             child: Container(
@@ -27,10 +39,36 @@ class _News extends State<News> {
                     width: 5,
                   )
               ),
-              child: const Image(
-                image: NetworkImage(
-                    'https://voss-metall.ru/assets/images/novosti.jpg'),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Container(
+                      height: 180,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(30),
+                          color: Colors.grey,
+
+                      ),
+                      child: assetImages.elementAt(index),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Container(
+                      height: 160,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(30),
+                          color: Colors.grey,
+
+                      ),
+                      child: const Text('новости\nновости', style: TextStyle(color: Colors.black, fontSize: 30)),
+                    ),
+                  ),
+                ],
               ),
+
             ),
             );
 
