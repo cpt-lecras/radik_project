@@ -21,7 +21,7 @@ class _News extends State<News> {
               height: 400,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
-                  color: Colors.grey,
+                  color: Colors.black,
                   border: Border.all(
                     color: Colors.amber,
                     width: 5,
