@@ -42,9 +42,9 @@ class _HomePage extends State<HomePage> {
     return Scaffold(
       //appbar
 
-        appBar: AppBar(
+        /*appBar: AppBar(
           title: TextOp.elementAt(selectedIndex),
-        ),
+        ),*/
         backgroundColor: Colors.black26,
         body: SafeArea(
           child: Center(
