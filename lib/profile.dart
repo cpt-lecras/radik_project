@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:styled_widget/styled_widget.dart';
+import 'package:getwidget/getwidget.dart';
 
 class Account extends StatefulWidget{
   const Account({super.key});
@@ -12,35 +13,46 @@ class _Account extends State<Account>{
   @override
   Widget build(BuildContext context){
     return Column(
-      children: [
-        Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Container(
-            height: 70,
-            decoration: BoxDecoration(
-              color: Colors.blueGrey,
-                borderRadius: BorderRadius.circular(30),
-            ),
-            child: const Padding(
-              padding: EdgeInsets.symmetric(
-                  horizontal: 165.0),
-              child: GNav(
-                iconSize: 30.0,
-                color: Colors.black,
-                activeColor: Colors.white70,
-                tabBackgroundColor: Colors.black12,
-                tabBorderRadius: 15,
-                gap: 15,
-                padding: EdgeInsets.all(15),
-                tabs: [
-                  GButton(
-                    icon: Icons.person,
-                  ),
-                ],
+      children:  [
+        Container(
+          //color: Colors.lightBlue,
+          child:(
+          Column(
+            children: [
+              Padding(
+                padding: EdgeInsets.all(15.0),
+                child: GFAvatar(
+                  radius: 70,
+                  backgroundImage:NetworkImage('https://www.adobe.com/express/create/media_127a4cd0c28c2753638768caf8967503d38d01e4c.jpeg?width=400&format=jpeg&optimize=medium'),
+                ),
               ),
-            ),
+              Padding(
+                padding: EdgeInsets.all(8.0),
+                child: Text(
+                  'Name Surname',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 25,
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.all(0.0),
+                child: Text(
+                  'email@gmail.com',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 15,
+                  ),
+                ),
+              ),
+            ],
+          )
           ),
+
         ),
+
+
       ],
     );
 

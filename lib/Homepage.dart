@@ -41,12 +41,15 @@ class _HomePage extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       //appbar
+
         appBar: AppBar(
           title: TextOp.elementAt(selectedIndex),
         ),
         backgroundColor: Colors.black26,
-        body: Center(
-          child: widgetOptions.elementAt(selectedIndex),
+        body: SafeArea(
+          child: Center(
+            child: widgetOptions.elementAt(selectedIndex),
+          ),
         ),
         bottomNavigationBar: Container(
           color: Colors.amberAccent,

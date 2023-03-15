@@ -33,7 +33,7 @@ const List<Text> NamePar = <Text>[
       textAlign: TextAlign.center),
   Text('ТРПП', style: TextStyle(fontSize: 15, color: Colors.black),
       textAlign: TextAlign.center),
-  Text('ТЕР. ВЕР.', style: TextStyle(fontSize: 15, color: Colors.black),
+  Text('Теория Вероятностей Математическая статистика.', style: TextStyle(fontSize: 15, color: Colors.black),
       textAlign: TextAlign.center),
   Text('Физ-ра', style: TextStyle(fontSize: 15, color: Colors.black),
       textAlign: TextAlign.center),
@@ -83,57 +83,65 @@ class _CalCircle extends State<CalCircle> {
                     ],
                   ),
 
-                  child:
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 10.0, vertical: 10.0),
-                        child: Container(
-                          height: 100,
-                          width: 70,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(5),
-                            color: Colors.amber,
-                          ),
-                          child:
-                          Center(
-                            child: TimePar.elementAt(index),
-                          ),
-                        ),
-                      ),
-                      Container(
-                        //padding: const EdgeInsets.symmetric(horizontal: 100,vertical: 15),
-                        height: 100,
-                        width: 200,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15),
-                          color: Colors.amber,
-                        ),
-                        child: Center(
-                          child: NamePar.elementAt(index),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 10.0, vertical: 10.0),
-                        child: Container(
-                          height: 60,
-                          width: 60,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(15),
-                            color: Colors.amber,
-                          ),
 
-                          child: Center(
-                            child: TypePar.elementAt(index),
-                          ),
 
+
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 10.0, vertical: 10.0),
+                          child: Container(
+                            height: 100,
+                            //width: 60,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(5),
+                              color: Colors.white,
+                            ),
+                            child:
+                            Center(
+                              child: TimePar.elementAt(index),
+                            ),
+                          ),
                         ),
-                      ),
-                    ],
-                  ),
+                        Flexible(
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Container(
+                              //padding: const EdgeInsets.symmetric(horizontal: 100,vertical: 15),
+                              height: 100,
+                              //width: 200,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(15),
+                                color: Colors.white,
+                              ),
+                              child: Center(
+                                child: NamePar.elementAt(index),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 10.0, vertical: 10.0),
+                          child: Container(
+                            height: 40,
+                            width: 40,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: Colors.blue,
+                            ),
+
+                            child: Center(
+                              child: TypePar.elementAt(index),
+                            ),
+
+                          ),
+                        ),
+                      ],
+                    ),
+
                 ),
               );
             }
