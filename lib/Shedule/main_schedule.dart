@@ -1,6 +1,6 @@
 import 'package:date_picker_timeline/date_picker_timeline.dart';
 import 'package:flutter/material.dart';
-import 'package:radik_project/Shedule/calendar.dart';
+import 'package:radik_project/Shedule/Cell_of_shedule.dart';
 
 class Schedule extends StatefulWidget{
   const Schedule({super.key});

@@ -12,6 +12,30 @@ class Account extends StatefulWidget{
 }
 
 class _Account extends State<Account>{
+
+  int item=0;
+
+  void SelectSmth(BuildContext context, int item)
+  {
+    switch (item) {
+      case 0:
+        {
+          Navigator.of(context).push(
+            MaterialPageRoute(builder: (context) => Settings()),
+          );
+          break;
+        }
+      case 1:
+        {
+          Navigator.of(context).push(
+            MaterialPageRoute(builder: (context) => SAbout()),
+          );
+          break;
+        }
+
+    }
+  }
+
   @override
   Widget build(BuildContext context){
     return Column(
@@ -89,9 +113,11 @@ class _Account extends State<Account>{
                       ],
                     ),
                   ),
-                  // кнопки
+
+
+            // кнопки
                   InkWell(
-                   // onTap: SAbout(),
+                   onTap: () {SelectSmth(context, 0);},
                     child: Container(
                       height: 65,
                       width: double.infinity,
@@ -120,30 +146,33 @@ class _Account extends State<Account>{
                       ),
                     ),
                   ),
-                  Container(
-                    height: 65,
-                    width: double.infinity,
-                    //color: Colors.white,
-                    child:Padding(
-                      padding: const EdgeInsets.all(15.0),
-                      child: Row(
-                        mainAxisAlignment:MainAxisAlignment.spaceBetween ,
-                        children: [
-                          Text(
-                            'О приложении',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 20,
+                  InkWell(
+                    onTap: () {SelectSmth(context, 1);},
+                    child: Container(
+                      height: 65,
+                      width: double.infinity,
+                      //color: Colors.white,
+                      child:Padding(
+                        padding: const EdgeInsets.all(15.0),
+                        child: Row(
+                          mainAxisAlignment:MainAxisAlignment.spaceBetween ,
+                          children: [
+                            Text(
+                              'О приложении',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 20,
+                              ),
                             ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.fromLTRB(0,0,15,0),
-                            child: Icon(
-                              Icons.arrow_forward_ios,
-                              color: Colors.white,
+                            Padding(
+                              padding: EdgeInsets.fromLTRB(0,0,15,0),
+                              child: Icon(
+                                Icons.arrow_forward_ios,
+                                color: Colors.white,
+                              ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
                   ),
@@ -176,6 +205,10 @@ class _Account extends State<Account>{
     );
 
 
+
+
   }
+
+
 
 }

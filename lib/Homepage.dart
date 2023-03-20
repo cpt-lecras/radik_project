@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
-import 'map.dart';
-import 'news.dart';
-import 'Profile/profile.dart';
-import 'Shedule/schedule.dart';
+import 'Map/map.dart';
+import 'News/news.dart';
+import 'Profile/main_profile.dart';
+import 'Shedule/main_schedule.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
