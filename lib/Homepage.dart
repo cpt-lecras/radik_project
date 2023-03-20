@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'map.dart';
 import 'news.dart';
-import 'profile.dart';
+import 'Profile/profile.dart';
 import 'Shedule/schedule.dart';
 
 class HomePage extends StatefulWidget {
