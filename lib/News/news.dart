@@ -23,57 +23,78 @@ class _News extends State<News> {
   @override
   Widget build(BuildContext context) {
 
-    return Expanded(
-        child: ListView.builder(
-          itemCount: 8,
-          itemBuilder: (BuildContext context, int index) {
-            return Padding(
-            padding: const EdgeInsets.all(5.0),
-            child: Container(
-              height: 400,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
-                  color: Colors.grey,//color
-                  border: Border.all(
-                    color: Colors.amber,
-                    width: 5,
-                  )
-              ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Container(
-                      height: 180,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(30),
-                          color: Colors.grey,
-
-                      ),
-                      child: assetImages.elementAt(index),
-                    ),
+    return Column(
+      children: [
+        Row(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: Container(
+                child: Text(
+                  'News',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Container(
-                      height: 160,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(30),
-                          color: Colors.grey,
-
-                      ),
-                      child: const Text('новости\nновости', style: TextStyle(color: Colors.black, fontSize: 30)),
-                    ),
-                  ),
-                ],
+                ),
               ),
-
             ),
-            );
-
-          }
+          ],
         ),
+        Expanded(
+            child: ListView.builder(
+              itemCount: 8,
+              itemBuilder: (BuildContext context, int index) {
+                return Padding(
+                padding: const EdgeInsets.all(5.0),
+                child: Container(
+                  height: 400,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      color: Colors.grey,//color
+                      border: Border.all(
+                        color: Colors.amber,
+                        width: 5,
+                      )
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Container(
+                          height: 180,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(30),
+                              color: Colors.grey,
+
+                          ),
+                          child: assetImages.elementAt(index),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Container(
+                          height: 160,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(30),
+                              color: Colors.grey,
+
+                          ),
+                          child: const Text('новости\nновости', style: TextStyle(color: Colors.black, fontSize: 30)),
+                        ),
+                      ),
+                    ],
+                  ),
+
+                ),
+                );
+
+              }
+            ),
+        ),
+      ],
     );
   }
 }

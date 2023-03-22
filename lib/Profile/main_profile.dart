@@ -36,6 +36,10 @@ class _Account extends State<Account>{
     }
   }
 
+  bool IndexThemeIcon=false;
+  IconData iconThemeSun= Icons.sunny ;
+  IconData iconThemeDark= Icons.nights_stay_outlined ;
+
   @override
   Widget build(BuildContext context){
     return Column(
@@ -85,6 +89,7 @@ class _Account extends State<Account>{
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 32,
+                                    fontWeight: FontWeight.bold,
                                   ),
                                 ),
                               ),
@@ -103,10 +108,20 @@ class _Account extends State<Account>{
                         Padding(
                           padding: EdgeInsets.fromLTRB(0,0,20,0),
 
-                          child: Icon(
-                            Icons.settings,
-                            color: Colors.grey,
-                            size: 45,
+                          child: IconButton(
+                              onPressed: (){
+                                setState((){
+                                  IndexThemeIcon= !IndexThemeIcon;
+                                }
+                                );
+                              },
+
+                              icon:Icon(
+                                (IndexThemeIcon ? iconThemeDark : iconThemeSun),
+                                color: (IndexThemeIcon ? Colors.blueGrey : Colors.amberAccent),
+                                size: 40,
+                              )
+
                           ),
                         ),
 
