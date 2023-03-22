@@ -4,6 +4,7 @@ import 'Map/map.dart';
 import 'News/news.dart';
 import 'Profile/main_profile.dart';
 import 'Shedule/main_schedule.dart';
+import 'Theme.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -13,6 +14,12 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePage extends State<HomePage> {
+
+  //Theme
+
+  //Theme
+
+
 
   int selectedIndex = 0;
   static const List<Widget> widgetOptions = <Widget>[

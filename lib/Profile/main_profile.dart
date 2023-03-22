@@ -84,7 +84,7 @@ class _Account extends State<Account>{
                                   'Settings',
                                   style: TextStyle(
                                     color: Colors.white,
-                                    fontSize: 30,
+                                    fontSize: 32,
                                   ),
                                 ),
                               ),
