@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'newsList.dart';
+import 'package:radik_project/News/dataList.dart';
+import 'package:html/parser.dart';
+import 'package:requests/requests.dart';
+import 'package:http/http.dart' as http;
 
 class News extends StatefulWidget {
   const News({super.key});
@@ -7,22 +12,11 @@ class News extends StatefulWidget {
   State<News> createState() => _News();
 }
 
-
-const List<Image> assetImages = <Image>[
-  Image(image: AssetImage('assets/images/news.jpg')),
-  Image(image: AssetImage('assets/images/news1.jpg')),
-  Image(image: AssetImage('assets/images/news2.jpg')),
-  Image(image: AssetImage('assets/images/news3.jpg')),
-  Image(image: AssetImage('assets/images/news4.jpg')),
-  Image(image: AssetImage('assets/images/news5.jpg')),
-  Image(image: AssetImage('assets/images/news6.jpg')),
-  Image(image: AssetImage('assets/images/news7.jpg')),
-];
-
 class _News extends State<News> {
+
+
   @override
   Widget build(BuildContext context) {
-
     return Column(
       children: [
         Row(
@@ -30,7 +24,7 @@ class _News extends State<News> {
             Padding(
               padding: const EdgeInsets.all(15.0),
               child: Container(
-                child: Text(
+                child: const Text(
                   'News',
                   style: TextStyle(
                     color: Colors.white,
@@ -42,59 +36,119 @@ class _News extends State<News> {
             ),
           ],
         ),
-        Expanded(
-            child: ListView.builder(
-              itemCount: 8,
-              itemBuilder: (BuildContext context, int index) {
-                return Padding(
-                padding: const EdgeInsets.all(5.0),
+        news_page(),
+      ],
+    );
+  }
+}
+
+class news_page extends StatelessWidget {
+  void Tab(BuildContext context, int index) {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+          builder: (context) => NewsList(
+                index: index,
+              )),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      child: ListView.builder(
+          itemCount: 8,
+          itemBuilder: (BuildContext context, int index) {
+            return Padding(
+              padding: const EdgeInsets.all(5.0),
+              child: Flexible(
                 child: Container(
                   height: 400,
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
-                      color: Colors.grey,//color
-                      border: Border.all(
-                        color: Colors.amber,
-                        width: 5,
-                      )
+                    borderRadius: BorderRadius.circular(15),
+                    color: Colors.amber, //color
                   ),
                   child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Container(
-                          height: 180,
+                      Container(
+                          width: 500,
+                          height: 240,
                           decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(30),
-                              color: Colors.grey,
-
+                            borderRadius: BorderRadius.circular(15.0),
+                            color: Colors.amber,
                           ),
-                          child: assetImages.elementAt(index),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(15.0),
+                            child: FittedBox(
+                              child: assetImages.elementAt(index),
+                              fit: BoxFit.cover,
+                            ),
+                          )),
+                      Container(
+                        alignment: Alignment.center,
+                        width: 500,
+                        height: 50,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(15.0),
+                          color: Colors.amber,
                         ),
+                        child: const Text('Title',
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 30,
+                                fontWeight: FontWeight.w500)),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Container(
-                          height: 160,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(30),
-                              color: Colors.grey,
-
-                          ),
-                          child: const Text('новости\nновости', style: TextStyle(color: Colors.black, fontSize: 30)),
+                      Container(
+                        padding: EdgeInsets.all(8.0),
+                        width: 500,
+                        height: 110,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(15.0),
+                          color: Colors.amber,
+                        ),
+                        child: Stack(
+                          children: [
+                            const Flexible(
+                              child: Text(
+                                  'texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext',
+                                  style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.w300)),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(top: 60.0),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  Container(
+                                    height: 40,
+                                    width: 40,
+                                    decoration: const BoxDecoration(
+                                        shape: BoxShape.circle,
+                                        color: Colors.black45),
+                                    child: GestureDetector(
+                                      onTap: () {
+                                        Tab(context, index);
+                                      },
+                                      child: const Icon(
+                                        Icons.arrow_forward_ios,
+                                        size: 30,
+                                        color: Colors.black,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            )
+                          ],
                         ),
                       ),
                     ],
                   ),
-
                 ),
-                );
-
-              }
-            ),
-        ),
-      ],
+              ),
+            );
+          }),
     );
   }
 }
