@@ -6,7 +6,7 @@ class Map extends StatefulWidget {
   @override
   State<Map> createState() => _Map();
 }
-//fsdfdgdf
+//fsdfdgdfgdfdgdf
 class _Map extends State<Map> {
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class _Map extends State<Map> {
             Padding(
               padding: const EdgeInsets.all(15.0),
               child: Container(
-                child: Text(
+                child: const Text(
                   'Map',
                   style: TextStyle(
                     color: Colors.white,
