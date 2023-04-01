@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:radik_project/Theme.dart';
 
 class Settings extends StatefulWidget{
   const Settings({super.key});
@@ -8,10 +9,15 @@ class Settings extends StatefulWidget{
 }
 
 class _Settings extends State<Settings> {
+
+  bool IndexThemeIcon=false;
+  IconData iconThemeSun= Icons.sunny ;
+  IconData iconThemeDark= Icons.nights_stay_outlined ;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: MainTheme[0],
 
       body: SafeArea(
         child: Column(
@@ -29,7 +35,7 @@ class _Settings extends State<Settings> {
                         //color: Colors.deepPurple,
                         child: Icon(
                           Icons.arrow_back,
-                          color: Colors.black,
+                          color: MainTheme[3],
                           size: 30,
                         ),
                       ),
@@ -38,7 +44,7 @@ class _Settings extends State<Settings> {
                     Text(
                         'Settings',
                         style: TextStyle(
-                          color: Colors.black,
+                          color: MainTheme[3],
                           fontSize: 30,
                           fontWeight: FontWeight.bold,
                       ),
@@ -48,6 +54,27 @@ class _Settings extends State<Settings> {
                 ],
               ),
         ),
+            Padding(
+              padding: EdgeInsets.fromLTRB(0,0,20,0),
+
+              child: IconButton(
+                  onPressed: (){
+                    setState((){
+                      IndexThemeIcon= !IndexThemeIcon;
+                      ThemeSetter(IndexThemeIcon ? 2 : 1);
+                    }
+                    );
+                  },
+
+                  icon:Icon(
+                    (IndexThemeIcon ? iconThemeDark : iconThemeSun),
+                    color: (IndexThemeIcon ? Colors.blueGrey : Colors.amberAccent),
+                    size: 40,
+                  )
+
+              ),
+            ),
+
 
           ],
         ),

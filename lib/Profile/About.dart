@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:radik_project/Theme.dart';
 
 class SAbout extends StatefulWidget{
   const SAbout({super.key});
@@ -15,7 +16,7 @@ class _SAbout extends State<SAbout>{
   Widget build(BuildContext context){
     return
       Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: MainTheme[0],
 
         body: SafeArea(
           child: Column(
@@ -27,10 +28,9 @@ class _SAbout extends State<SAbout>{
                     child: Padding(
                       padding: EdgeInsets.all(15.0),
                       child: Container(
-                        color: Colors.deepPurple,
                         child: Icon(
                           Icons.arrow_back,
-                          color: Colors.black,
+                          color: MainTheme[3],
                         ),
                       ),
                     ),

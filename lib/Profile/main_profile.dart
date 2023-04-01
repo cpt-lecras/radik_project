@@ -4,6 +4,7 @@ import 'package:getwidget/getwidget.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:radik_project/Profile/About.dart';
 import 'package:radik_project/Profile/settings.dart';
+import 'package:radik_project/Theme.dart';
 class Account extends StatefulWidget{
   const Account({super.key});
 
@@ -36,9 +37,7 @@ class _Account extends State<Account>{
     }
   }
 
-  bool IndexThemeIcon=false;
-  IconData iconThemeSun= Icons.sunny ;
-  IconData iconThemeDark= Icons.nights_stay_outlined ;
+
 
   @override
   Widget build(BuildContext context){
@@ -48,19 +47,19 @@ class _Account extends State<Account>{
         Column(
           children:  [
 
-                  const Padding(
+                  Padding(
                     padding: EdgeInsets.all(15.0),
                     child: GFAvatar(
                       radius: 70,
                       backgroundImage:NetworkImage('https://www.adobe.com/express/create/media_127a4cd0c28c2753638768caf8967503d38d01e4c.jpeg?width=400&format=jpeg&optimize=medium'),
                     ),
                   ),
-                  const Padding(
+                  Padding(
                     padding: EdgeInsets.all(8.0),
                     child: Text(
                       'Name Surname',
                       style: TextStyle(
-                        color: Colors.white,
+                        color: MainTheme[4],
                         fontSize: 25,
                       ),
                     ),
@@ -68,7 +67,7 @@ class _Account extends State<Account>{
                   Text(
                       'email@gmail.com',
                       style: TextStyle(
-                        color: Colors.white,
+                        color: MainTheme[4],
                         fontSize: 15,
                       ),
                     ),
@@ -87,7 +86,7 @@ class _Account extends State<Account>{
                                 child: Text(
                                   'Settings',
                                   style: TextStyle(
-                                    color: Colors.white,
+                                    color: MainTheme[4],
                                     fontSize: 32,
                                     fontWeight: FontWeight.bold,
                                   ),
@@ -96,7 +95,7 @@ class _Account extends State<Account>{
                               Text(
                                   'Good morning!',
                                   style: TextStyle(
-                                    color: Colors.white,
+                                    color: MainTheme[4],
                                     fontSize: 16,
                                   ),
                                 ),
@@ -105,25 +104,7 @@ class _Account extends State<Account>{
                           ),
                         ),
 
-                        Padding(
-                          padding: EdgeInsets.fromLTRB(0,0,20,0),
 
-                          child: IconButton(
-                              onPressed: (){
-                                setState((){
-                                  IndexThemeIcon= !IndexThemeIcon;
-                                }
-                                );
-                              },
-
-                              icon:Icon(
-                                (IndexThemeIcon ? iconThemeDark : iconThemeSun),
-                                color: (IndexThemeIcon ? Colors.blueGrey : Colors.amberAccent),
-                                size: 40,
-                              )
-
-                          ),
-                        ),
 
                       ],
                     ),
@@ -145,7 +126,7 @@ class _Account extends State<Account>{
                             Text(
                               'Настройки приложения',
                               style: TextStyle(
-                                color: Colors.white,
+                                color: MainTheme[4],
                                 fontSize: 20,
                               ),
                             ),
@@ -153,7 +134,7 @@ class _Account extends State<Account>{
                               padding: EdgeInsets.fromLTRB(0,0,15,0),
                               child: Icon(
                                 Icons.arrow_forward_ios,
-                                color: Colors.white,
+                                color: MainTheme[4],
                               ),
                             ),
                           ],
@@ -175,7 +156,7 @@ class _Account extends State<Account>{
                             Text(
                               'О приложении',
                               style: TextStyle(
-                                color: Colors.white,
+                                color: MainTheme[4],
                                 fontSize: 20,
                               ),
                             ),
@@ -183,7 +164,7 @@ class _Account extends State<Account>{
                               padding: EdgeInsets.fromLTRB(0,0,15,0),
                               child: Icon(
                                 Icons.arrow_forward_ios,
-                                color: Colors.white,
+                                color: MainTheme[4],
                               ),
                             ),
                           ],

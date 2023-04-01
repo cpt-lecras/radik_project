@@ -4,7 +4,7 @@ import 'package:radik_project/News/dataList.dart';
 import 'package:html/parser.dart';
 import 'package:requests/requests.dart';
 import 'package:http/http.dart' as http;
-
+import 'package:radik_project/Theme.dart';
 class News extends StatefulWidget {
   const News({super.key});
 
@@ -65,7 +65,7 @@ class news_page extends StatelessWidget {
                   height: 400,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15),
-                    color: Colors.amber, //color
+                    color: MainTheme[1], //color
                   ),
                   child: Column(
                     children: [
@@ -74,7 +74,7 @@ class news_page extends StatelessWidget {
                           height: 240,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(15.0),
-                            color: Colors.amber,
+                            color: MainTheme[1],
                           ),
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(15.0),
@@ -89,11 +89,11 @@ class news_page extends StatelessWidget {
                         height: 50,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(15.0),
-                          color: Colors.amber,
+                          color: MainTheme[1],
                         ),
-                        child: const Text('Title',
+                        child: Text('Title',
                             style: TextStyle(
-                                color: Colors.black,
+                                color: MainTheme[4],
                                 fontSize: 30,
                                 fontWeight: FontWeight.w500)),
                       ),
@@ -103,15 +103,15 @@ class news_page extends StatelessWidget {
                         height: 110,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(15.0),
-                          color: Colors.amber,
+                          color: MainTheme[1],
                         ),
                         child: Stack(
                           children: [
-                            const Flexible(
+                            Flexible(
                               child: Text(
                                   'texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext',
                                   style: TextStyle(
-                                      color: Colors.black,
+                                      color: MainTheme[4],
                                       fontSize: 20,
                                       fontWeight: FontWeight.w300)),
                             ),
@@ -123,17 +123,17 @@ class news_page extends StatelessWidget {
                                   Container(
                                     height: 40,
                                     width: 40,
-                                    decoration: const BoxDecoration(
+                                    decoration: BoxDecoration(
                                         shape: BoxShape.circle,
-                                        color: Colors.black45),
+                                        color: MainTheme[2]),
                                     child: GestureDetector(
                                       onTap: () {
                                         Tab(context, index);
                                       },
-                                      child: const Icon(
+                                      child: Icon(
                                         Icons.arrow_forward_ios,
                                         size: 30,
-                                        color: Colors.black,
+                                        color: MainTheme[4],
                                       ),
                                     ),
                                   ),

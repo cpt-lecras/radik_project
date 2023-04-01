@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-
+import 'package:radik_project/Theme.dart';
 
 class CalCircle extends StatefulWidget {
   const CalCircle({super.key});
@@ -9,54 +9,54 @@ class CalCircle extends StatefulWidget {
   State<CalCircle> createState() => _CalCircle();
 }
 
-const List<Text> TimePar = <Text>[
-  Text('8:10\n9:45', style: TextStyle(fontSize: 15, color: Colors.black),
+List<Text> TimePar = <Text>[
+  Text('8:10\n9:45', style: TextStyle(fontSize: 15, color: MainTheme[4]),
       textAlign: TextAlign.center),
-  Text('9:55\n11:30', style: TextStyle(fontSize: 15, color: Colors.black),
+  Text('9:55\n11:30', style: TextStyle(fontSize: 15, color: MainTheme[4]),
       textAlign: TextAlign.center),
-  Text('11:40\n13:15', style: TextStyle(fontSize: 15, color: Colors.black),
+  Text('11:40\n-\n13:15', style: TextStyle(fontSize: 15, color: MainTheme[4]),
       textAlign: TextAlign.center),
-  Text('13:35\n15:10', style: TextStyle(fontSize: 15, color: Colors.black),
+  Text('13:35\n15:10', style: TextStyle(fontSize: 15, color: MainTheme[4]),
       textAlign: TextAlign.center),
-  Text('15:20\n16:55', style: TextStyle(fontSize: 15, color: Colors.black),
+  Text('15:20\n16:55', style: TextStyle(fontSize: 15, color: MainTheme[4]),
       textAlign: TextAlign.center),
-  Text('17:05\n18:40', style: TextStyle(fontSize: 15, color: Colors.black),
+  Text('17:05\n18:40', style: TextStyle(fontSize: 15, color: MainTheme[4]),
       textAlign: TextAlign.center),
-  Text('18:50\n20:15', style: TextStyle(fontSize: 15, color: Colors.black),
-      textAlign: TextAlign.center),
-];
-
-const List<Text> NamePar = <Text>[
-  Text('--', style: TextStyle(fontSize: 15, color: Colors.black),
-      textAlign: TextAlign.center),
-  Text('СЦТ', style: TextStyle(fontSize: 15, color: Colors.black),
-      textAlign: TextAlign.center),
-  Text('ТРПП', style: TextStyle(fontSize: 15, color: Colors.black),
-      textAlign: TextAlign.center),
-  Text('Теория Вероятностей Математическая статистика.', style: TextStyle(fontSize: 15, color: Colors.black),
-      textAlign: TextAlign.center),
-  Text('Физ-ра', style: TextStyle(fontSize: 15, color: Colors.black),
-      textAlign: TextAlign.center),
-  Text('--', style: TextStyle(fontSize: 15, color: Colors.black),
-      textAlign: TextAlign.center),
-  Text('--', style: TextStyle(fontSize: 15, color: Colors.black),
+  Text('18:50\n20:15', style: TextStyle(fontSize: 15, color: MainTheme[4]),
       textAlign: TextAlign.center),
 ];
 
-const List<Text> TypePar = <Text>[
-  Text('ПР', style: TextStyle(fontSize: 15, color: Colors.black),
+List<Text> NamePar = <Text>[
+  Text('--', style: TextStyle(fontSize: 15, color: MainTheme[4]),
       textAlign: TextAlign.center),
-  Text('ПР', style: TextStyle(fontSize: 15, color: Colors.black),
+  Text('СЦТ', style: TextStyle(fontSize: 15, color: MainTheme[4]),
       textAlign: TextAlign.center),
-  Text('ЛК', style: TextStyle(fontSize: 15, color: Colors.black),
+  Text('ТРПП', style: TextStyle(fontSize: 15, color: MainTheme[4]),
       textAlign: TextAlign.center),
-  Text('ПР', style: TextStyle(fontSize: 15, color: Colors.black),
+  Text('Теория Вероятностей Математическая статистика.', style: TextStyle(fontSize: 15, color: MainTheme[4]),
       textAlign: TextAlign.center),
-  Text('ПР', style: TextStyle(fontSize: 15, color: Colors.black),
+  Text('Физ-ра', style: TextStyle(fontSize: 15, color: MainTheme[4]),
       textAlign: TextAlign.center),
-  Text('', style: TextStyle(fontSize: 15, color: Colors.black),
+  Text('--', style: TextStyle(fontSize: 15, color: MainTheme[4]),
       textAlign: TextAlign.center),
-  Text('', style: TextStyle(fontSize: 15, color: Colors.black),
+  Text('--', style: TextStyle(fontSize: 15, color: MainTheme[4]),
+      textAlign: TextAlign.center),
+];
+
+List<Text> TypePar = <Text>[
+  Text('ПР', style: TextStyle(fontSize: 15, color: MainTheme[4]),
+      textAlign: TextAlign.center),
+  Text('ПР', style: TextStyle(fontSize: 15, color: MainTheme[4]),
+      textAlign: TextAlign.center),
+  Text('ЛК', style: TextStyle(fontSize: 15, color: MainTheme[4]),
+      textAlign: TextAlign.center),
+  Text('ПР', style: TextStyle(fontSize: 15, color: MainTheme[4]),
+      textAlign: TextAlign.center),
+  Text('ПР', style: TextStyle(fontSize: 15, color: MainTheme[4]),
+      textAlign: TextAlign.center),
+  Text('', style: TextStyle(fontSize: 15, color: MainTheme[4]),
+      textAlign: TextAlign.center),
+  Text('', style: TextStyle(fontSize: 15, color: MainTheme[4]),
       textAlign: TextAlign.center),
 ];
 
@@ -74,9 +74,9 @@ class _CalCircle extends State<CalCircle> {
                   height: 100,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15),
-                    color: Colors.amber,
-                    boxShadow: const [
-                      BoxShadow(color: Colors.amberAccent,
+                    color: MainTheme[1],
+                    boxShadow: [
+                      BoxShadow(color: MainTheme[1],
                           offset: Offset(-1, 1),
                           blurRadius: 5,
                           spreadRadius: 1)
@@ -97,7 +97,7 @@ class _CalCircle extends State<CalCircle> {
                             //width: 60,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(5),
-                              color: Colors.white,
+                              color: MainTheme[1],
                             ),
                             child:
                             Center(
@@ -114,7 +114,7 @@ class _CalCircle extends State<CalCircle> {
                               //width: 200,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(15),
-                                color: Colors.white,
+                                color: MainTheme[1],
                               ),
                               child: Center(
                                 child: NamePar.elementAt(index),
@@ -130,7 +130,7 @@ class _CalCircle extends State<CalCircle> {
                             width: 40,
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
-                              color: Colors.blue,
+                              color: MainTheme[0],
                             ),
 
                             child: Center(

@@ -1,27 +1,9 @@
 import 'package:flutter/material.dart';
 
 
-
-List<Color> AppColorMain = <Color> [
-
-];
-
-void _AppColor(index){
-  switch(index){
-    case 0:
-      AppColorMain=AppColorPastel;
-      break;
-    case 1:
-      AppColorMain=AppColorYellow;
-      break;
-  }
-}
-
-
 ThemeData basikTheme() => ThemeData(
   brightness: Brightness.light,
   textTheme: const TextTheme(
-
     headlineLarge: TextStyle(
       color: Colors.black,
       fontSize: 32,
@@ -42,6 +24,27 @@ ThemeData basikTheme() => ThemeData(
 
   ),
 );
+
+List <Color> MainTheme = <Color> [
+  const Color(0xFF22223B),
+  const Color(0xFF4A4E69),
+  const Color(0xFF9A8C98),
+  const Color(0xFFC9ADA7),
+  const Color(0xFFF2E9E4),
+];
+void ThemeSetter(selectedColor)
+{
+  switch(selectedColor){
+    case 1:
+      MainTheme=AppColorPastel;
+      break;
+    case 2:
+      MainTheme=AppColorYellow;
+      break;
+  }
+}
+
+
 List<Color> AppColorPastel = <Color> [
   const Color(0xFF22223B),
   const Color(0xFF4A4E69),

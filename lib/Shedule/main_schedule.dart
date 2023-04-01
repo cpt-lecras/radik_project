@@ -1,6 +1,7 @@
 import 'package:date_picker_timeline/date_picker_timeline.dart';
 import 'package:flutter/material.dart';
 import 'package:radik_project/Shedule/Cell_of_shedule.dart';
+import 'package:radik_project/Theme.dart';
 
 class Schedule extends StatefulWidget{
   const Schedule({super.key});
@@ -33,7 +34,7 @@ class _Schedule extends State<Schedule>{
                   child: Text(
                     'Shedule',
                     style: TextStyle(
-                      color: Colors.white,
+                      color: MainTheme[4],
                       fontSize: 30,
                       fontWeight: FontWeight.bold,
                     ),
@@ -49,24 +50,24 @@ class _Schedule extends State<Schedule>{
                 padding: const EdgeInsets.fromLTRB(5,0,5,15),
                 child: Container(
                   height: 80,
-                  color: Colors.black,
+                  color: MainTheme[0],
                   child: DatePicker(
                     DateTime.now(),
                     height: 70,
                     width: 60,
                     initialSelectedDate: DateTime.now(),
-                    selectionColor: Colors.amberAccent,
-                    selectedTextColor: Colors.black,
-                    dayTextStyle: const TextStyle(
-                      color: Colors.amber,
+                    selectionColor: MainTheme[3],
+                    selectedTextColor: MainTheme[0],
+                    dayTextStyle: TextStyle(
+                      color: MainTheme[3],
                     ),
-                    monthTextStyle: const TextStyle(
-                      color: Colors.amber,
+                    monthTextStyle: TextStyle(
+                      color: MainTheme[3],
                     ),
-                    dateTextStyle: const TextStyle(
+                    dateTextStyle: TextStyle(
                       fontSize:20,
                       fontWeight: FontWeight.w600,
-                      color: Colors.amber
+                      color: MainTheme[3]
                     ),
                   ),
                 ),

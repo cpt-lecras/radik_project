@@ -52,23 +52,24 @@ class _HomePage extends State<HomePage> {
         /*appBar: AppBar(
           title: TextOp.elementAt(selectedIndex),
         ),*/
-        backgroundColor: Colors.black26,
+        backgroundColor: MainTheme[0],
+
         body: SafeArea(
           child: Center(
             child: widgetOptions.elementAt(selectedIndex),
           ),
         ),
         bottomNavigationBar: Container(
-          color: Colors.amberAccent,
+          color: MainTheme[0],
           child: Padding(
             padding: const EdgeInsets.symmetric(
                 horizontal: 15.0, vertical: 10.0),
             child: GNav(
               iconSize: 28.0,
-              backgroundColor: Colors.amberAccent,
-              color: Colors.black,
-              activeColor: Colors.amberAccent,
-              tabBackgroundColor: Colors.black,
+              backgroundColor: MainTheme[0],
+              color: MainTheme[4],
+              activeColor: MainTheme[0],
+              tabBackgroundColor: MainTheme[4],
               padding: const EdgeInsets.all(10),
               gap: 10,
               onTabChange: (selectedIndex) {
