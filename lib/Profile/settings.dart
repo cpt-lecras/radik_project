@@ -61,7 +61,7 @@ class _Settings extends State<Settings> {
                   onPressed: (){
                     setState((){
                       IndexThemeIcon= !IndexThemeIcon;
-                      ThemeSetter(IndexThemeIcon ? 2 : 1);
+                      ThemeSetter(IndexThemeIcon);
                     }
                     );
                   },

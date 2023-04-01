@@ -35,10 +35,10 @@ List <Color> MainTheme = <Color> [
 void ThemeSetter(selectedColor)
 {
   switch(selectedColor){
-    case 1:
+    case false:
       MainTheme=AppColorPastel;
       break;
-    case 2:
+    case true:
       MainTheme=AppColorYellow;
       break;
   }
