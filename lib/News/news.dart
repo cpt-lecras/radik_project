@@ -43,6 +43,7 @@ class _News extends State<News> {
 }
 
 class news_page extends StatelessWidget {
+
   void Tab(BuildContext context, int index) {
     Navigator.of(context).push(
       MaterialPageRoute(
