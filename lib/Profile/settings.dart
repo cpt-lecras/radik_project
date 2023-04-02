@@ -55,23 +55,49 @@ class _Settings extends State<Settings> {
               ),
         ),
             Padding(
-              padding: EdgeInsets.fromLTRB(0,0,20,0),
+              padding: const EdgeInsets.all(10.0),
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(15),
+                  color: MainTheme[1],
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(15.0),
+                      child: Text(
+                        'Theme',
+                        style: TextStyle(
+                          color: MainTheme[3],
+                          fontSize: 25,
 
-              child: IconButton(
-                  onPressed: (){
-                    setState((){
-                      IndexThemeIcon= !IndexThemeIcon;
-                      ThemeSetter(IndexThemeIcon);
-                    }
-                    );
-                  },
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.all(10.0),
 
-                  icon:Icon(
-                    (IndexThemeIcon ? iconThemeDark : iconThemeSun),
-                    color: (IndexThemeIcon ? Colors.blueGrey : Colors.amberAccent),
-                    size: 40,
-                  )
+                      child: IconButton(
 
+                          onPressed: (){
+                            setState((){
+                              IndexThemeIcon= !IndexThemeIcon;
+                              ThemeSetter(IndexThemeIcon);
+                            }
+                            );
+                          },
+
+                          icon:Icon(
+                            (IndexThemeIcon ? iconThemeDark : iconThemeSun),
+                            color: (IndexThemeIcon ? Colors.blueGrey : Colors.amberAccent),
+                            size: 40,
+                          )
+
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
 
