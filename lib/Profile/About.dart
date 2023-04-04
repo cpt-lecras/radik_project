@@ -3,6 +3,7 @@ import 'package:radik_project/Theme.dart';
 import 'package:getwidget/getwidget.dart';
 import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class SAbout extends StatefulWidget {
   const SAbout({super.key});
@@ -12,15 +13,6 @@ class SAbout extends StatefulWidget {
 }
 
 class _SAbout extends State<SAbout> {
-
-  Future<void> _launch() async {
-    final url = 'https://github.com/cpt-lecras';
-    var uri = Uri.parse(url);
-    if (await canLaunchUrl(uri)) {
-      await launchUrl(uri);
-    } else {
-      throw 'Could not launch $url';
-    }}
 
   @override
   Widget build(BuildContext context) {
@@ -147,7 +139,7 @@ class _SAbout extends State<SAbout> {
                                               padding: EdgeInsets.all(8.0),
                                               child: InkWell(
                                                 onTap: () {
-                                                  _launch();
+                                                  launchUrlString("https://github.com/cpt-lecras");
                                                 },
                                                 child: const GFAvatar(
                                                   radius: 40,
@@ -173,7 +165,7 @@ class _SAbout extends State<SAbout> {
                                               padding: EdgeInsets.all(8.0),
                                               child: InkWell(
                                                 onTap: () {
-                                                  _launch();
+                                                  launchUrlString("https://github.com/HolloW159");
                                                 },
                                                 child: const GFAvatar(
                                                   radius: 40,

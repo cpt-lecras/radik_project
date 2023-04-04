@@ -33,7 +33,7 @@ dependencies:
   http: any
   html: any
   requests: any
-  url_launcher: ^6.1.10
+  url_launcher: any
 
 
 
