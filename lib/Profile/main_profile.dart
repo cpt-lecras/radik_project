@@ -4,6 +4,7 @@ import 'package:getwidget/getwidget.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:radik_project/Profile/About.dart';
 import 'package:radik_project/Profile/settings.dart';
+import 'package:radik_project/Profile/AuthWin.dart';
 import 'package:radik_project/Theme.dart';
 class Account extends StatefulWidget{
   const Account({super.key});
@@ -30,6 +31,13 @@ class _Account extends State<Account>{
         {
           Navigator.of(context).push(
             MaterialPageRoute(builder: (context) => SAbout()),
+          );
+          break;
+        }
+      case 2:
+        {
+          Navigator.of(context).push(
+            MaterialPageRoute(builder: (context) => AuthWin()),
           );
           break;
         }
@@ -175,28 +183,35 @@ class _Account extends State<Account>{
 
 
 
+
           ],
         ),
-        /*Padding(
-          padding: const EdgeInsets.all(15.0),
-          child: Container(
-            height: 65,
-            width: 200,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(40),
-              color: Colors.purple,
-            ),
-            child: Center(
-              child: Text(
-                'ВОЙТИ',
-                style: TextStyle(
-                  fontSize: 25,
-                  color: Colors.white,
+
+        InkWell(
+          onTap: () {SelectSmth(context, 2);},
+          child: Flexible(
+            child: Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: Container(
+                height: 55,
+
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(40),
+                  color: MainTheme[1],
+                ),
+                child: Center(
+                  child: Text(
+                    'ВОЙТИ',
+                    style: TextStyle(
+                      fontSize: 25,
+                      color: MainTheme[4],
+                    ),
+                  ),
                 ),
               ),
             ),
           ),
-        )*///Кнопка войти
+        )//Кнопка войти
       ],
     );
 

@@ -127,7 +127,7 @@ class _SAbout extends State<SAbout> {
                                 ),
                                 child: Column(
                                   children: [
-                                    const Row(
+                                    Row(
                                       children: [
                                         Padding(
                                           padding: EdgeInsets.all(8.0),

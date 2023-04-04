@@ -69,6 +69,11 @@ class _Schedule extends State<Schedule>{
                       fontWeight: FontWeight.w600,
                       color: MainTheme[3]
                     ),
+                    onDateChange:(date) {setState(() {
+                      //Код смены
+                    });
+                    },
+
                   ),
                 ),
               ),
