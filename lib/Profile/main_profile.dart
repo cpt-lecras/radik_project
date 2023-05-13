@@ -18,6 +18,7 @@ class Account extends StatefulWidget{
 class _Account extends State<Account>{
 
   int item=0;
+  final user = FirebaseAuth.instance.currentUser!;
 
   void SelectSmth(BuildContext context, int item)
   {
@@ -47,6 +48,9 @@ class _Account extends State<Account>{
     }
   }
 
+  void signUserOut () async {
+    FirebaseAuth.instance.signOut();
+  }
 
 
   @override
@@ -74,13 +78,33 @@ class _Account extends State<Account>{
                       ),
                     ),
                   ),
-                  Text(
-                      'email@gmail.com',
-                      style: TextStyle(
-                        color: MainTheme[4],
-                        fontSize: 15,
-                      ),
+            StreamBuilder<User?>(
+              stream: FirebaseAuth.instance.authStateChanges(),
+              builder:  (context, snapshot) {
+                //user logged in
+                if (snapshot.hasData){
+                  return Text(
+                    user.email!,
+                    style: TextStyle(
+                      color: MainTheme[4],
+                      fontSize: 15,
                     ),
+                  );
+                }
+                //user is NOT logged in
+                else {
+                  return Text(
+                    'email@gmail.com',
+                    style: TextStyle(
+                      color: MainTheme[4],
+                      fontSize: 15,
+                    ),
+                  );
+                }
+
+              },
+            ),
+
                   Padding(
                     padding: EdgeInsets.fromLTRB(0,10,0,0),
                     child: Row(
@@ -196,7 +220,7 @@ class _Account extends State<Account>{
           builder:  (context, snapshot) {
       //user logged in
           if (snapshot.hasData){
-            return MyOutButton(onTap: () {/*сюда выход из аккаунта*/},);
+            return MyOutButton(onTap: () {signUserOut();},);
           }
       //user is NOT logged in
           else {

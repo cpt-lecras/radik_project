@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:radik_project/Theme.dart';
 import 'package:radik_project/components/my_textfield.dart';
@@ -20,13 +21,35 @@ class Login extends StatefulWidget{
 
 class _Login extends State<Login> {
 
-  final usernameController = TextEditingController();
+  final emailController = TextEditingController();
   final passwordController = TextEditingController();
 //sign user in method
 
   bool SuccessAuth=false;
 
-  void signUserIn (){}
+  void signUserIn () async {
+
+//loading
+    showDialog(
+        context: context,
+        builder: (context) {
+          return Center(
+            child: CircularProgressIndicator(),
+          );
+        },
+    );
+
+//try sign in
+    await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: emailController.text,
+        password: passwordController.text,
+    );
+    Navigator.pop(context, false);
+    Navigator.pop(context, false);
+
+
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -93,8 +116,8 @@ class _Login extends State<Login> {
                           SizedBox(height: 20,),
 //Text Field user
                           MyTextField(
-                            controller: usernameController,
-                            hintText: 'Username',
+                            controller: emailController,
+                            hintText: 'E-Mail',
                             obsecureText: false,
 
                           ),
