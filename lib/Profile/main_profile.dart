@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:styled_widget/styled_widget.dart';
+import 'package:radik_project/components/Input_button.dart';
 import 'package:getwidget/getwidget.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:radik_project/Profile/About.dart';
 import 'package:radik_project/Profile/settings.dart';
-import 'package:radik_project/Profile/AuthWin.dart';
+import 'package:radik_project/Profile/Login.dart';
 import 'package:radik_project/Theme.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:radik_project/components/Out_Button.dart';
 class Account extends StatefulWidget{
   const Account({super.key});
 
@@ -37,7 +39,7 @@ class _Account extends State<Account>{
       case 2:
         {
           Navigator.of(context).push(
-            MaterialPageRoute(builder: (context) => AuthWin()),
+            MaterialPageRoute(builder: (context) => Login()),
           );
           break;
         }
@@ -187,31 +189,23 @@ class _Account extends State<Account>{
           ],
         ),
 
-        InkWell(
-          onTap: () {SelectSmth(context, 2);},
-          child: Flexible(
-            child: Padding(
-              padding: const EdgeInsets.all(15.0),
-              child: Container(
-                height: 55,
+        //Кнопка войти
 
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(40),
-                  color: MainTheme[1],
-                ),
-                child: Center(
-                  child: Text(
-                    'ВОЙТИ',
-                    style: TextStyle(
-                      fontSize: 25,
-                      color: MainTheme[4],
-                    ),
-                  ),
-                ),
-              ),
-            ),
+          StreamBuilder<User?>(
+          stream: FirebaseAuth.instance.authStateChanges(),
+          builder:  (context, snapshot) {
+      //user logged in
+          if (snapshot.hasData){
+            return MyOutButton(onTap: () {/*сюда выход из аккаунта*/},);
+          }
+      //user is NOT logged in
+          else {
+            return MyInputButton(onTap: () {SelectSmth(context, 2);},);
+          }
+
+          },
           ),
-        )//Кнопка войти
+
       ],
     );
 
