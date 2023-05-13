@@ -63,7 +63,7 @@ class CalCircle extends StatelessWidget {
                                 color: MainTheme[1],
                               ),
                               child: Center(
-                                child: Text(_getWeekdayName(dayOfWeek)),
+                                child: _getWeekdayName(dayOfWeek).elementAt(index),
                               ),
                             ),
                           ),
@@ -80,7 +80,7 @@ class CalCircle extends StatelessWidget {
                             ),
 
                             child: Center(
-                              child: TypePar.elementAt(index),
+                              child: _getTypePar(dayOfWeek).elementAt(index),
                             ),
 
                           ),
@@ -96,24 +96,45 @@ class CalCircle extends StatelessWidget {
   }
 }
 
-String _getWeekdayName(int weekday) {
+List<Text> _getWeekdayName(int weekday) {
   switch (weekday) {
     case DateTime.monday:
-      return 'Monday';
+      return Monday;
     case DateTime.tuesday:
-      return 'Tuesday';
+      return Tuesday;
     case DateTime.wednesday:
-      return 'Wednesday';
+      return Wednesday;
     case DateTime.thursday:
-      return 'Thursday';
+      return Thursday;
     case DateTime.friday:
-      return 'Friday';
+      return Friday;
     case DateTime.saturday:
-      return 'Saturday';
+      return Saturday;
     case DateTime.sunday:
-      return 'Sunday';
+      return Sunday;
     default:
-      return '';
+      return List.empty();
   }
 }
+List<Text> _getTypePar(int weekday) {
+  switch (weekday) {
+    case DateTime.monday:
+      return MondayTypePar;
+    case DateTime.tuesday:
+      return TuesdayTypePar;
+    case DateTime.wednesday:
+      return WednesdayTypePar;
+    case DateTime.thursday:
+      return ThursdayTypePar;
+    case DateTime.friday:
+      return FridayTypePar;
+    case DateTime.saturday:
+      return SaturdayTypePar;
+    case DateTime.sunday:
+      return SundayTypePar;
+    default:
+      return List.empty();
+  }
+}
+
 
