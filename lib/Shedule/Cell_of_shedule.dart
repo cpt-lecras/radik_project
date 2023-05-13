@@ -1,66 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:radik_project/Theme.dart';
+import 'package:radik_project/Shedule/main_schedule.dart';
+import 'package:radik_project/Shedule/data.dart';
 
-class CalCircle extends StatefulWidget {
-  const CalCircle({super.key});
+class CalCircle extends StatelessWidget {
 
-  @override
-  State<CalCircle> createState() => _CalCircle();
-}
+  final DateTime selectedDate;
 
-List<Text> TimePar = <Text>[
-  Text('8:10\n9:45', style: TextStyle(fontSize: 15, color: MainTheme[4]),
-      textAlign: TextAlign.center),
-  Text('9:55\n11:30', style: TextStyle(fontSize: 15, color: MainTheme[4]),
-      textAlign: TextAlign.center),
-  Text('11:40\n-\n13:15', style: TextStyle(fontSize: 15, color: MainTheme[4]),
-      textAlign: TextAlign.center),
-  Text('13:35\n15:10', style: TextStyle(fontSize: 15, color: MainTheme[4]),
-      textAlign: TextAlign.center),
-  Text('15:20\n16:55', style: TextStyle(fontSize: 15, color: MainTheme[4]),
-      textAlign: TextAlign.center),
-  Text('17:05\n18:40', style: TextStyle(fontSize: 15, color: MainTheme[4]),
-      textAlign: TextAlign.center),
-  Text('18:50\n20:15', style: TextStyle(fontSize: 15, color: MainTheme[4]),
-      textAlign: TextAlign.center),
-];
-
-List<Text> NamePar = <Text>[
-  Text('--', style: TextStyle(fontSize: 15, color: MainTheme[4]),
-      textAlign: TextAlign.center),
-  Text('СЦТ', style: TextStyle(fontSize: 15, color: MainTheme[4]),
-      textAlign: TextAlign.center),
-  Text('ТРПП', style: TextStyle(fontSize: 15, color: MainTheme[4]),
-      textAlign: TextAlign.center),
-  Text('Теория Вероятностей Математическая статистика.', style: TextStyle(fontSize: 15, color: MainTheme[4]),
-      textAlign: TextAlign.center),
-  Text('Физ-ра', style: TextStyle(fontSize: 15, color: MainTheme[4]),
-      textAlign: TextAlign.center),
-  Text('--', style: TextStyle(fontSize: 15, color: MainTheme[4]),
-      textAlign: TextAlign.center),
-  Text('--', style: TextStyle(fontSize: 15, color: MainTheme[4]),
-      textAlign: TextAlign.center),
-];
-
-List<Text> TypePar = <Text>[
-  Text('ПР', style: TextStyle(fontSize: 15, color: MainTheme[4]),
-      textAlign: TextAlign.center),
-  Text('ПР', style: TextStyle(fontSize: 15, color: MainTheme[4]),
-      textAlign: TextAlign.center),
-  Text('ЛК', style: TextStyle(fontSize: 15, color: MainTheme[4]),
-      textAlign: TextAlign.center),
-  Text('ПР', style: TextStyle(fontSize: 15, color: MainTheme[4]),
-      textAlign: TextAlign.center),
-  Text('ПР', style: TextStyle(fontSize: 15, color: MainTheme[4]),
-      textAlign: TextAlign.center),
-  Text('', style: TextStyle(fontSize: 15, color: MainTheme[4]),
-      textAlign: TextAlign.center),
-  Text('', style: TextStyle(fontSize: 15, color: MainTheme[4]),
-      textAlign: TextAlign.center),
-];
-
-class _CalCircle extends State<CalCircle> {
+  CalCircle({required this.selectedDate});
 
   @override
   Widget build(BuildContext context) {
@@ -68,6 +16,7 @@ class _CalCircle extends State<CalCircle> {
         child: ListView.builder(
             itemCount: 7,
             itemBuilder: (BuildContext context, int index){
+              final dayOfWeek = DateTime(selectedDate.year, selectedDate.month, selectedDate.day).weekday;
               return Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Container(
@@ -114,7 +63,7 @@ class _CalCircle extends State<CalCircle> {
                                 color: MainTheme[1],
                               ),
                               child: Center(
-                                child: NamePar.elementAt(index),
+                                child: _getWeekdayName(dayOfWeek).elementAt(index),
                               ),
                             ),
                           ),
@@ -131,7 +80,7 @@ class _CalCircle extends State<CalCircle> {
                             ),
 
                             child: Center(
-                              child: TypePar.elementAt(index),
+                              child: _getTypePar(dayOfWeek).elementAt(index),
                             ),
 
                           ),
@@ -146,4 +95,46 @@ class _CalCircle extends State<CalCircle> {
     );
   }
 }
+
+List<Text> _getWeekdayName(int weekday) {
+  switch (weekday) {
+    case DateTime.monday:
+      return Monday;
+    case DateTime.tuesday:
+      return Tuesday;
+    case DateTime.wednesday:
+      return Wednesday;
+    case DateTime.thursday:
+      return Thursday;
+    case DateTime.friday:
+      return Friday;
+    case DateTime.saturday:
+      return Saturday;
+    case DateTime.sunday:
+      return Sunday;
+    default:
+      return List.empty();
+  }
+}
+List<Text> _getTypePar(int weekday) {
+  switch (weekday) {
+    case DateTime.monday:
+      return MondayTypePar;
+    case DateTime.tuesday:
+      return TuesdayTypePar;
+    case DateTime.wednesday:
+      return WednesdayTypePar;
+    case DateTime.thursday:
+      return ThursdayTypePar;
+    case DateTime.friday:
+      return FridayTypePar;
+    case DateTime.saturday:
+      return SaturdayTypePar;
+    case DateTime.sunday:
+      return SundayTypePar;
+    default:
+      return List.empty();
+  }
+}
+
 
