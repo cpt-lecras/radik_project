@@ -18,7 +18,8 @@ class Account extends StatefulWidget{
 class _Account extends State<Account>{
 
   int item=0;
-  final user = FirebaseAuth.instance.currentUser!;
+
+
 
   void SelectSmth(BuildContext context, int item)
   {
@@ -81,8 +82,10 @@ class _Account extends State<Account>{
             StreamBuilder<User?>(
               stream: FirebaseAuth.instance.authStateChanges(),
               builder:  (context, snapshot) {
+
                 //user logged in
                 if (snapshot.hasData){
+                  final user = FirebaseAuth.instance.currentUser!;
                   return Text(
                     user.email!,
                     style: TextStyle(
