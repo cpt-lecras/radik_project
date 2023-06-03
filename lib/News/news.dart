@@ -57,7 +57,7 @@ class news_page extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: ListView.builder(
-          itemCount: 8,
+          itemCount: TextTitle.length,
           itemBuilder: (BuildContext context, int index) {
             return Padding(
               padding: const EdgeInsets.all(5.0),
@@ -80,23 +80,23 @@ class news_page extends StatelessWidget {
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(15.0),
                             child: FittedBox(
-                              child: assetImages.elementAt(index),
                               fit: BoxFit.cover,
+                              child: assetImages.elementAt(index),
                             ),
-                          )),
-                      Container(
-                        alignment: Alignment.center,
-                        width: 500,
-                        height: 50,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15.0),
-                          color: MainTheme[1],
+                          )
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Container(
+                          alignment: Alignment.center,
+                          width: 500,
+                          height: 33,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(15.0),
+                            color: MainTheme[1],
+                          ),
+                          child:  TextTitle.elementAt(index),
                         ),
-                        child: Text('Title',
-                            style: TextStyle(
-                                color: MainTheme[4],
-                                fontSize: 30,
-                                fontWeight: FontWeight.w500)),
                       ),
                       Container(
                         padding: EdgeInsets.all(8.0),
@@ -109,12 +109,7 @@ class news_page extends StatelessWidget {
                         child: Stack(
                           children: [
                             Flexible(
-                              child: Text(
-                                  'texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext',
-                                  style: TextStyle(
-                                      color: MainTheme[4],
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.w300)),
+                              child: TextNews.elementAt(index),
                             ),
                             Padding(
                               padding: const EdgeInsets.only(top: 60.0),
@@ -134,7 +129,7 @@ class news_page extends StatelessWidget {
                                       child: Icon(
                                         Icons.arrow_forward_ios,
                                         size: 30,
-                                        color: MainTheme[4],
+                                        color: MainTheme[1],
                                       ),
                                     ),
                                   ),

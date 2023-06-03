@@ -3,12 +3,15 @@ import 'package:intl/intl.dart';
 import 'package:radik_project/Theme.dart';
 import 'package:radik_project/Shedule/main_schedule.dart';
 import 'package:radik_project/Shedule/data.dart';
+import 'package:radik_project/Theme.dart';
 
 class CalCircle extends StatelessWidget {
 
   final DateTime selectedDate;
 
   CalCircle({required this.selectedDate});
+
+  bool show = true;
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +22,7 @@ class CalCircle extends StatelessWidget {
               final dayOfWeek = DateTime(selectedDate.year, selectedDate.month, selectedDate.day).weekday;
               return Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Container(
+                child: _getWeekdayName(dayOfWeek)?.elementAt(index) != null ? Container(
                   height: 100,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15),
@@ -31,64 +34,61 @@ class CalCircle extends StatelessWidget {
                           spreadRadius: 1)
                     ],
                   ),
-
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 10.0, vertical: 10.0),
+                  child: _getWeekdayName(dayOfWeek)?.elementAt(index) != null ? Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 10.0, vertical: 10.0),
+                        child: Container(
+                          height: 100,
+                          //width: 60,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(5),
+                            color: MainTheme[1],
+                          ),
+                          child:
+                          Center(
+                            child: TimePar.elementAt(index),
+                          ),
+                        ),
+                      ),
+                      Flexible(
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
                           child: Container(
+                            //padding: const EdgeInsets.symmetric(horizontal: 100,vertical: 15),
                             height: 100,
-                            //width: 60,
+                            //width: 200,
                             decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(5),
+                              borderRadius: BorderRadius.circular(15),
                               color: MainTheme[1],
                             ),
                             child:
-                            Center(
-                              child: TimePar.elementAt(index),
-                            ),
+                            Center(child: _getWeekdayName(dayOfWeek)?.elementAt(index),),
                           ),
                         ),
-                        Flexible(
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Container(
-                              //padding: const EdgeInsets.symmetric(horizontal: 100,vertical: 15),
-                              height: 100,
-                              //width: 200,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(15),
-                                color: MainTheme[1],
-                              ),
-                              child: Center(
-                                child: _getWeekdayName(dayOfWeek).elementAt(index),
-                              ),
-                            ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 10.0, vertical: 10.0),
+                        child: Container(
+                          height: 40,
+                          width: 40,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: MainTheme[0],
                           ),
+
+                          child: Center(child: _getTypePar(dayOfWeek)?.elementAt(index),),
+
                         ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 10.0, vertical: 10.0),
-                          child: Container(
-                            height: 40,
-                            width: 40,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: MainTheme[0],
-                            ),
+                      ),
+                    ],
+                  ) : null,
 
-                            child: Center(
-                              child: _getTypePar(dayOfWeek).elementAt(index),
-                            ),
-
-                          ),
-                        ),
-                      ],
-                    ),
-
-                ),
+                ) : Text('Пар нет!', textAlign: TextAlign.center,
+                    style: TextStyle(color: MainTheme[4], fontSize: 25, fontWeight: FontWeight.w500)),
               );
             }
             ),
@@ -96,7 +96,10 @@ class CalCircle extends StatelessWidget {
   }
 }
 
-List<Text> _getWeekdayName(int weekday) {
+
+
+
+List<Text>? _getWeekdayName(int weekday) {
   switch (weekday) {
     case DateTime.monday:
       return Monday;
@@ -109,14 +112,14 @@ List<Text> _getWeekdayName(int weekday) {
     case DateTime.friday:
       return Friday;
     case DateTime.saturday:
-      return Saturday;
+      return null;
     case DateTime.sunday:
-      return Sunday;
+      return null;
     default:
       return List.empty();
   }
 }
-List<Text> _getTypePar(int weekday) {
+List<Text>? _getTypePar(int weekday) {
   switch (weekday) {
     case DateTime.monday:
       return MondayTypePar;
@@ -129,9 +132,9 @@ List<Text> _getTypePar(int weekday) {
     case DateTime.friday:
       return FridayTypePar;
     case DateTime.saturday:
-      return SaturdayTypePar;
+      return null;
     case DateTime.sunday:
-      return SundayTypePar;
+      return null;
     default:
       return List.empty();
   }

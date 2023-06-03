@@ -40,6 +40,14 @@ class NewsList extends StatelessWidget {
                     child: assetImages.elementAt(index),
                   ),
                 ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(15.0),
+                child: TextTitle.elementAt(index)
+              ),
+              Padding(
+                  padding: const EdgeInsets.all(15.0),
+                  child: TextNews.elementAt(index)
               )
             ],
           ),

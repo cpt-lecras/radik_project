@@ -20,6 +20,7 @@ class _Schedule extends State<Schedule> {
     });
   }
 
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -32,7 +33,7 @@ class _Schedule extends State<Schedule> {
             children: [
               Container(
                 child: Text(
-                  'Shedule',
+                  'Sсhedule',
                   style: TextStyle(
                     color: MainTheme[4],
                     fontSize: 30,
