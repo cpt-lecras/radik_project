@@ -11,15 +11,16 @@ class CalCircle extends StatelessWidget {
 
   CalCircle({required this.selectedDate});
 
-  bool show = true;
+
+
 
   @override
   Widget build(BuildContext context) {
+    final dayOfWeek = DateTime(selectedDate.year, selectedDate.month, selectedDate.day).weekday;
     return Expanded(
-        child: ListView.builder(
+        child: _getWeekdayName(dayOfWeek) != null ? ListView.builder(
             itemCount: 7,
             itemBuilder: (BuildContext context, int index){
-              final dayOfWeek = DateTime(selectedDate.year, selectedDate.month, selectedDate.day).weekday;
               return Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: _getWeekdayName(dayOfWeek)?.elementAt(index) != null ? Container(
@@ -34,7 +35,7 @@ class CalCircle extends StatelessWidget {
                           spreadRadius: 1)
                     ],
                   ),
-                  child: _getWeekdayName(dayOfWeek)?.elementAt(index) != null ? Row(
+                  child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Padding(
@@ -85,13 +86,31 @@ class CalCircle extends StatelessWidget {
                         ),
                       ),
                     ],
-                  ) : null,
+                  ),
 
-                ) : Text('Пар нет!', textAlign: TextAlign.center,
-                    style: TextStyle(color: MainTheme[4], fontSize: 25, fontWeight: FontWeight.w500)),
+                ) : null,
               );
             }
+            ) : Center(
+        child: Column(
+          children: [
+            Center(
+              child: Text('Пар нет!', textAlign: TextAlign.center,
+              style: TextStyle(color: MainTheme[4], fontSize: 25, fontWeight: FontWeight.w500)),
             ),
+            Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(15.0),
+                child: const FittedBox(
+                  fit: BoxFit.cover,
+                  child: Image(image: NetworkImage('https://steamuserimages-a.akamaihd.net/ugc/1829036352649239123/19C555134B4239C6A1A6CF47834F5A908CA851E9/?imw=512&imh=512&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true')),
+                ),
+              ),
+            ),
+          ],
+        ),
+    ),
     );
   }
 }

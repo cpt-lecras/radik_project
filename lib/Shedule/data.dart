@@ -6,7 +6,7 @@ const List<Text> TimePar = <Text>[
       textAlign: TextAlign.center),
   Text('9:55\n11:30', style: TextStyle(fontSize: 15, color: Colors.white),
       textAlign: TextAlign.center),
-  Text('11:40\n-\n13:15', style: TextStyle(fontSize: 15, color: Colors.white),
+  Text('11:40\n13:15', style: TextStyle(fontSize: 15, color: Colors.white),
       textAlign: TextAlign.center),
   Text('13:35\n15:10', style: TextStyle(fontSize: 15, color: Colors.white),
       textAlign: TextAlign.center),
@@ -114,22 +114,7 @@ const List<Text> Saturday = <Text>[
   Text('', style: TextStyle(fontSize: 15, color: Colors.white),
       textAlign: TextAlign.center),
 ];
-const List<Text> Sunday = <Text>[
-  Text('', style: TextStyle(fontSize: 15, color: Colors.white),
-      textAlign: TextAlign.center),
-  Text('', style: TextStyle(fontSize: 15, color: Colors.white),
-      textAlign: TextAlign.center),
-  Text('', style: TextStyle(fontSize: 15, color: Colors.white),
-      textAlign: TextAlign.center),
-  Text('', style: TextStyle(fontSize: 15, color: Colors.white),
-      textAlign: TextAlign.center),
-  Text('', style: TextStyle(fontSize: 15, color: Colors.white),
-      textAlign: TextAlign.center),
-  Text('', style: TextStyle(fontSize: 15, color: Colors.white),
-      textAlign: TextAlign.center),
-  Text('', style: TextStyle(fontSize: 15, color: Colors.white),
-      textAlign: TextAlign.center),
-];
+
 
 const List<Text> MondayTypePar = <Text>[
   Text('', style: TextStyle(fontSize: 15, color: Colors.white),
@@ -227,22 +212,7 @@ const List<Text> SaturdayTypePar = <Text>[
   Text('', style: TextStyle(fontSize: 15, color: Colors.white),
       textAlign: TextAlign.center),
 ];
-const List<Text> SundayTypePar = <Text>[
-  Text('', style: TextStyle(fontSize: 15, color: Colors.white),
-      textAlign: TextAlign.center),
-  Text('', style: TextStyle(fontSize: 15, color: Colors.white),
-      textAlign: TextAlign.center),
-  Text('', style: TextStyle(fontSize: 15, color: Colors.white),
-      textAlign: TextAlign.center),
-  Text('', style: TextStyle(fontSize: 15, color: Colors.white),
-      textAlign: TextAlign.center),
-  Text('', style: TextStyle(fontSize: 15, color: Colors.white),
-      textAlign: TextAlign.center),
-  Text('', style: TextStyle(fontSize: 15, color: Colors.white),
-      textAlign: TextAlign.center),
-  Text('', style: TextStyle(fontSize: 15, color: Colors.white),
-      textAlign: TextAlign.center),
-];
+
 
 
 
